@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="images/Logo.png">
+	<link rel="icon" type="image/jpg" href="images/Logo.png">
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div class="container loginBox">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>注册</h2>
+    			<i class="tipsIcon"></i>
+    			<a href="login.html" class="regBtn">登录</a>
+    		</div>
+		</header>
+		<div class="headImg">
+			<img src="images/Logo.png" />
+		</div>
+		<form class="form" autocomplete="off" name="form" action="" method="get">
+			<div class="shoplist registerBox registerBox01" id="registerBox01">
+				<ul class="loginBox" style="margin-bottom: 0.2rem;">
+					<li class="list loginBox">
+						<div class="form">
+							<ol>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="请输入您的姓名" value="" id="user" />
+										<span class="spin"></span>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="请输入您的单位名称(选填)" value="" id="unit" />
+										<span class="spin"></span>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="请输入您的身份证号" value="" id="cardNo" />
+										<span class="spin"></span>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" id="picker" placeholder="请选择就近服务区域" readonly="readonly" onclick="citySelect()">
+										<span class="spin"></span>
+										<i class="iconfont">&#xe6ac;</i>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="请输入就近服务地址" value="" id="area" />
+										<span class="spin"></span>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="请选择您的学历" value="" id="record" readonly="readonly" />
+										<span class="spin"></span>
+										<i class="iconfont">&#xe6ac;</i>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="扫描推荐人二维码(选填)" value="" />
+										<span class="spin"></span>
+										<i class="iconfont scan_icon">&#xe7aa;</i>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="number" maxlength="11" placeholder="请输入您的手机号" value="" id="phone" />
+										<span class="spin"></span>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="number" placeholder="请输入短信验证码" value="" id="sms" />
+										<input type="button" value="获取验证码" id="SendCode" onclick="checkSms()" />
+										<span class="spin"></span>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="password" placeholder="请输入密码" value="" id="pwd" />
+										<span class="spin"></span>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist">
+										<button class="formli_btn" type="button" onclick="submitData()">注 册</button>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist" style="padding: .2rem 0;">
+										<div class="formlistcheck">
+											<label for="checkbox">
+												<input type="checkbox" value="" name="check" id="checkbox" />
+											</label>
+											<p>
+												<label for="checkbox">我已阅读并同意</label>
+												<a class="check_a" onclick="toKnow()">《用户协议》</a>
+												<a class="check_a" onclick="toPrivacyPolicy()">《隐私条款》</a>
+											</p>
+										</div>
+									</div>
+								</li>
+							</ol>
+						</div>
+	    			</li>
+				</ul>
+			</div>
+			
+		</form>
+	</div>
+	
+	<div class="layerBox" id="layerBox">
+		<div class="mainPerson">
+			<h2>请选择就近服务区域</h2>
+			<div class="areaDialog">
+				<span id="province" onclick="setProvince(this)"></span>
+				<span id="city" onclick="setCity(this)"></span>
+				<span id="district" onclick="setDistrict(this)"></span>
+			</div>
+			<ul class="provinceData" id="provinceData">
+				<li onclick="getProvince(this)">安徽</li>
+			</ul>
+			<ul class="cityData" id="cityData">
+				<li onclick="getCity(this)">安庆</li>
+			</ul>
+			<ul class="districtData" id="districtData">
+				<li onclick="getDistrict(this)">大观区</li>
+			</ul>
+		</div>
+	</div>
+	<div class="layerDialog" id="layerDialog" onclick="closeDialog(this)"></div>
+	
+	<div class="fireworks">
+		<div class="fire"></div>
+		<div class="fireworkstext">
+		    <div class="firetips">
+		    	<h2>注册成功</h2>
+		    	<h3>恭喜您注册成功</h3>
+		    	<h4>请上传您全部相关职业资格证书，</h4>
+		    	<h4>资格证书越多通过率和接单率越高。</h4>
+		    	<button type="button" onclick="window.location.href = 'accountInformation.html';">去上传</button>
+		    </div>
+		</div>
+		
+	</div>
+	<div class="noteBody" id="noteBody">
+		<h2 class="noteHead">
+			<div class="closeNote" onclick="closeNote()">关闭</div>
+		</h2>
+		<div class="nodeContent" id="nodeContent"></div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-weui.min.js" ></script>
+	<script type="text/javascript" src="js/mobileSelect.js" ></script>
+	<script type="text/javascript" src="js/jquery.fireworks.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		
+		$(".loginBox .input input").each(function(){
+			$(this).focus(function(){
+				$(this).siblings().addClass('animation');
+			})
+			$(this).blur(function(){
+				$(this).siblings().removeClass('animation');
+			})
+		})
+		const submitData = () => {
+			
+				
+			let user = $("#user").val();
+			let pwd = $("#pwd").val();
+			let pwd2 = $("#pwd2").val();
+			let cardNo = $("#cardNo").val();
+			let idcardReg = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+    		let picker = $("#picker").val();
+    		let area = $("#area").val();
+			let record = $("#record").val();
+			var phone = $("#phone").val();
+			var phonereg = /^(((13[0-9]{1})|(15[0-9]{1})|(16[6]{1})|(17[0-9]{1})|(18[0-9]{1})|(19[8-9]{1}))+\d{8})$/;
+			var sms = $("#sms").val();
+			
+			if (user == ""){
+				$.toast("请输入您的姓名", "text");
+				form.user.focus();
+			} else if (cardNo == ""){
+				$.toast("请输入您的身份证号", "text");
+				form.cardNo.focus();
+			} else if (!idcardReg.test(cardNo)){
+				$.toast("请输入合法的身份证号", "text");
+				form.cardNo.focus();
+			} else if (picker == ""){
+				$.toast("请选择就近服务区域", "text");
+				form.picker.focus();
+			} else if (area == ""){
+				$.toast("请输入就近服务地址", "text");
+				form.area.focus();
+			} else if (record == ""){
+				$.toast("请选择学历", "text");
+				form.record.focus();
+			} else if (phone == ""){
+				$.toast("请输入您的手机号", "text");
+				form.phone.focus();
+			} else if (!phonereg.test(phone)){
+				$.toast("请填写正确的手机号码", "text");
+				form.phone.focus();
+			} else if (sms == ""){
+				$.toast("请输入短信验证码", "text");
+				form.sms.focus();
+			} else if (pwd == ""){
+				$.toast("请输入密码", "text");
+				form.pwd.focus();
+			} else {
+				$(".fireworks").addClass('open');
+				$('.fire').fireworks({ 
+				  sound: false,
+				  opacity: 0.95, 
+				  width: '100%', 
+				  height: '100%' 
+				});
+				setTimeout(() => {
+					$(".fireworkstext").addClass('dloor');
+				}, 500)
+			}
+		};
+		
+		const nextOne = () => {
+			$("#registerBox01").addClass('opacity1');
+			$("#registerBox02").addClass('opacity2');
+		};
+		
+		const prevTwo = () => {
+			$("#registerBox02").removeClass('opacity2');
+			$("#registerBox02").addClass('opacity2s');
+			$("#registerBox01").removeClass('opacity1');
+			$("#registerBox01").addClass('opacity1s');
+			setTimeout(() => {
+				$("#registerBox02").removeClass('opacity2s');
+				$("#registerBox01").removeClass('opacity1s');
+			}, 300)
+		};
+		
+		const citySelect = () => {
+			openDialog();
+		};
+		
+		const recordSelect = new MobileSelect({
+		    trigger: '#record',
+		    title: '选择学历',
+		    wheels: [
+	                {data:[
+	                    "小学", "初中", "高中", "大专", "本科", "研究生"
+	                ]}
+	        ],
+		    transitionEnd:function(indexArr, data){
+		        console.log(data);
+		    },
+		    callback:function(indexArr, data){
+		        console.log(data);
+		        $("#record").val(data[0]);
+		    }  
+		});
+		
+		const closeDialog = () => {
+			$("#layerDialog").fadeOut();
+			$("#layerBox").removeClass('layerTop');
+		};
+		
+		const openDialog = () => {
+			setTimeout(() => {
+				$("#layerDialog").fadeIn();
+			}, 500)
+			$("#layerBox").addClass('layerTop');
+		};
+		
+		const uoloadIdentity = () => {
+			openDialog();
+		};
+		
+		
+		var provinceText = '';
+		var cityText = '';
+		var districtText = '';
+		
+		//省
+		const getProvince = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');	
+			$(obj).hide();
+			provinceText = $(obj).text();
+			$("#province").text($(obj).text());
+			$("#city").text("请选择");
+			$("#district").text("");
+			$("#cityData").show();
+			$(".areaDialog").show();
+		};
+		
+		//市
+		const getCity = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');	
+			$(obj).hide();
+			cityText = $(obj).text();
+			$("#city").text($(obj).text());
+			$("#district").text("请选择");
+			$("#districtData").show();
+			$(".areaDialog").show();
+		};
+		
+		//区
+		const getDistrict = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');
+			districtText = $(obj).text();
+			$("#district").text($(obj).text());
+			setareaData();
+		};
+		
+		const setareaData = () => {
+			$("#picker").val(provinceText + cityText + districtText);
+			closeDialog();
+		};
+		
+		const setCity = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');
+			$("#cityData").show();
+			$("#cityData").children().show();
+			$("#districtData").hide();
+			$("#provinceData").hide();
+		};
+		
+		const setProvince = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');
+			$("#provinceData").show();
+			$("#provinceData").children().show();
+			$("#cityData").hide();
+			$("#districtData").hide();
+		};
+		
+		const setDistrict = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');
+			$("#districtData").show();
+			$("#districtData").children().show();
+			$("#provinceData").hide();
+			$("#cityData").hide();
+		};
+		
+		const checkSms = () => {
+			var phone = $("#phone").val();
+			var phonereg = /^(((13[0-9]{1})|(15[0-9]{1})|(16[6]{1})|(17[0-9]{1})|(18[0-9]{1})|(19[8-9]{1}))+\d{8})$/;
+			
+			if (phone == ""){
+				$.toast("请输入您的手机号", "text");
+				form.phone.focus();
+			} else if (!phonereg.test(phone)){
+				$.toast("请填写正确的手机号码", "text");
+				form.phone.focus();
+			} else {
+				SendInfo()
+			}
+		}
+		
+		//短信验证码
+
+		var $InterValObj; //timer变量，控制时间
+		var $count = 60; //间隔函数，1秒执行
+		var $curCount;//当前剩余秒数
+		var $code = ""; //验证码
+		var $codeLength = 6;//验证码长度
+		const SendInfo = () => {
+			$curCount = $count;
+			//产生验证码
+			for (var i = 0; i < $codeLength; i++) {
+				$code += parseInt(Math.random() * 9).toString();
+			}
+			//设置button效果，开始计时
+			$("#SendCode").attr("disabled",true);
+			$("#SendCode").val( + $curCount + "秒后再获取");
+			$InterValObj = window.setInterval(SetResetTime, 1000); //启动计时器，1秒执行一次
+		}
+		
+		//timer处理函数
+		const SetResetTime = () => {
+			if ($curCount == 0) {                
+				window.clearInterval($InterValObj);//停止计时器
+				$("#SendCode").removeAttr("disabled");//启用按钮
+				$("#SendCode").val("获取验证码");
+				$code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效    
+			}else {
+				$curCount--;
+				$("#SendCode").val( + $curCount + "秒后再获取");
+			}
+		}
+		
+		const toPrivacyPolicy = () => {
+			var url = 'privacyPolicy.html .container .privacyPolicy';
+			noteBody();
+			$("#nodeContent").load(url,"",function(){
+				
+			})
+		}
+		
+		const toKnow = () => {
+			var url = 'know.html .container .privacyPolicy';
+			noteBody();
+			$("#nodeContent").load(url,"",function(){
+				
+			})
+		}
+		
+		const noteBody = () => {
+			$("#noteBody").animate({
+				top:'0'
+			},300)
+		}
+		
+		const closeNote = () => {
+			$("#noteBody").animate({
+				top:'100%'
+			},300)
+		}
+	</script>
+</body>
+</html>

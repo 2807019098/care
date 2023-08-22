@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="">
+	<link rel="icon" type="image/jpg" href="">
+    <link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div class="container scroll">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>我的订单</h2>
+    		</div>
+		</header>
+		<div class="aui-myOrder-content">
+			<div class="demo-small-pitch">
+				<div class="aui-myOrder-fix">
+					<ul class="tab-nav" data-tab = "nav">
+						<li class="tab-nav-item ">全部</li>
+						<li class="tab-nav-item ">待付款</li>
+						<li class="tab-nav-item ">待确认</li>
+						<li class="tab-nav-item ">已完成</li>
+						<li class="tab-nav-item ">已取消</li>
+					</ul>
+				</div>
+				<div class="tab-panel">
+					<div class="tab-panel-item">
+						<ul class="tab-panel-ul">
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105689484</span>
+									<div class="flex-cell align-center muc-orign">
+										<div class="status-jq10">
+											<span>待付款</span>
+											<span>23小时50分钟</span>
+										</div>
+									</div>
+								</div>
+								<div class="flex-wrap panel-content" data-url = "orderdetail6.html">
+									<div class="flex-cell align-center">
+										<a href=""><img class="orderlistpic" src="static/images/index/veer-130812528_r2_c2.jpg"/></a>
+									</div>
+									<div class="flex-item marginitemlist">
+										<div class="foodname">轻度照护 每次2小时 每周3次 共4周</div>
+										<div class="tag"><span class="tag_a">三天/周</span></div>
+										<div class="info_price">
+											<div class="good-price">¥1190.00</div>
+											<span class="count">x1</span>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<a href="bill2.html" class="orderbtn-b ml15">查看发票</a>
+									<a href="javascript:closeorder()" class="orderbtn-b ml15">取消订单</a>
+									<a href="pay.html" class="orderbtn ml15">去支付</a>
+								</div>
+							</li>
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105685678</span>
+									<div class="flex-cell align-center muc-orign">
+										<div class="status-jq10">
+											<span>待付款</span>
+											<span>22小时10分钟</span>
+										</div>
+									</div>
+								</div>
+								<div class="flex-wrap panel-content" data-url = "orderdetail6.html">
+									<div class="flex-cell align-center">
+										<a href=""><img class="orderlistpic" src="static/images/index/veer-130812528_r2_c2.jpg"/></a>
+									</div>
+									<div class="flex-item marginitemlist">
+										<div class="foodname">轻度照护 每次2小时 每周3次 共4周</div>
+										<div class="tag"><span class="tag_a">三天/周</span></div>
+										<div class="info_price">
+											<div class="good-price">¥1190.00</div>
+											<span class="count">x1</span>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<a href="javascript:closeorder()" class="orderbtn-b ml15">取消订单</a>
+									<a href="pay.html" class="orderbtn ml15">去支付</a>
+								</div>
+							</li>
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105685678</span>
+									<span class="flex-cell align-center muc-orign">待发货</span>
+								</div>
+								<div class="flex-wrap panel-content" data-url = "orderdetail6.html">
+									<div class="flex-cell align-center">
+										<a href=""><img class="orderlistpic" src="static/images/index/veer-130946362_r1_c1.jpg"/></a>
+									</div>
+									<div class="flex-item marginitemlist">
+										<div class="foodname">轻度照护 每次2小时 每周3次 共4周</div>
+										<div class="tag"><span class="tag_a">三天/周</span></div>
+										<div class="info_price">
+											<div class="good-price">¥1190.00</div>
+											<span class="count">x1</span>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<a href="bill2.html" class="orderbtn-b ml15">查看发票</a>
+									<a href="javascript:refund()" class="orderbtn-b ml15">申请退款</a>
+									<a href="" class="orderbtn ml15">再次购买</a>
+								</div>
+							</li>
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105685678</span>
+									<span class="flex-cell align-center muc-orign">待收货</span>
+								</div>
+								<div class="flex-wrap panel-content" data-url = "orderdetail6.html">
+									<div class="flex-cell align-center">
+										<a href=""><img class="orderlistpic" src="static/images/index/veer-163067058_r1_c2.jpg"/></a>
+									</div>
+									<div class="flex-item marginitemlist">
+										<div class="foodname">轻度照护 每次2小时 每周3次 共4周</div>
+										<div class="tag"><span class="tag_a">三天/周</span></div>
+										<div class="info_price">
+											<div class="good-price">¥1190.00</div>
+											<span class="count">x1</span>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<a href="bill2.html" class="orderbtn-b ml15">查看发票</a>
+									<a href="javascript:refund()" class="orderbtn-b ml15">申请退款</a>
+									<a href="" class="orderbtn ml15">确认收货</a>
+								</div>
+							</li>
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105685678</span>
+									<span class="flex-cell align-center muc-orign">待收货</span>
+								</div>
+								<div class="flex-wrap panel-content" data-url = "orderdetail6.html">
+									<div class="flex-cell align-center">
+										<a href=""><img class="orderlistpic" src="static/images/index/veer-170476157_r1_c2.jpg"/></a>
+									</div>
+									<div class="flex-item marginitemlist">
+										<div class="foodname">轻度照护 每次2小时 每周3次 共4周</div>
+										<div class="tag"><span class="tag_a">三天/周</span></div>
+										<div class="info_price">
+											<div class="good-price">¥1190.00</div>
+											<span class="count">x1</span>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<a href="bill2.html" class="orderbtn-b ml15">查看发票</a>
+									<a href="javascript:refund()" class="orderbtn-b ml15">申请退款</a>
+									<a href="" class="orderbtn ml15">确认收货</a>
+								</div>
+							</li>
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105685678</span>
+									<span class="flex-cell align-center muc-orign">已取消</span>
+								</div>
+								<div class="flex-wrap panel-content" data-url = "orderdetail6.html">
+									<div class="flex-cell align-center">
+										<a href=""><img class="orderlistpic" src="images/index/veer-170476157_r1_c2.jpg"/></a>
+									</div>
+									<div class="flex-item marginitemlist">
+										<div class="foodname">轻度照护 每次2小时 每周3次 共4周</div>
+										<div class="tag"><span class="tag_a">三天/周</span></div>
+										<div class="info_price">
+											<div class="good-price">¥1190.00</div>
+											<span class="count">x1</span>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<a href="javascript:delorder()" class="orderbtn-b ml15">删除订单</a>
+									<a href="" class="orderbtn ml15">再次购买</a>
+								</div>
+							</li>
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105685678</span>
+									<span class="flex-cell align-center muc-orign">交易完成</span>
+								</div>
+								<div class="align-center flex-wrap panel-content" data-url = "orderdetail6.html">
+									
+									<div class="flex-item marginitemlist">
+										<a><img class="orderlistpic" src="images/index/veer-170476157_r1_c2.jpg"/></a>
+										<a><img class="orderlistpic" src="images/index/veer-163067058_r1_c2.jpg"/></a>
+										<a><img class="orderlistpic" src="images/index/veer-130812528_r2_c2.jpg"/></a>
+										<a><img class="orderlistpic" src="images/index/veer-130812528_r2_c2.jpg"/></a>
+										<a><img class="orderlistpic" src="images/index/veer-130812528_r2_c2.jpg"/></a>
+									</div>
+									<div class="food-cell align-center">
+										<span class="foodprice">&yen;300.00</span>
+										<i class="icon-tally">&times;3</i>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<div class="morebox">
+										<a href="logistics3.html" class="morebox-li">查看物流</a>
+										<a href="bill1.html" class="morebox-li">查看发票</a>
+										<a href="javascript:delorder()" class="morebox-li">删除订单</a>
+									</div>
+									<span class="more-jq33" onclick="morestatus(this)">更多</span>
+									<div class="layertips" onclick="closelayertips(this)"></div>
+									<a href="shopappraise.html" class="orderbtn-b ml15">评价</a>
+									<a class="orderbtn-b ml15">退换/售后</a>
+									<a class="orderbtn ml15">再次购买</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-panel-item">
+						<ul class="tab-panel-ul">
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105685678</span>
+									<div class="flex-cell align-center muc-orign">
+										<div class="status-jq10">
+											<span>待付款</span>
+											<span>23小时50分钟</span>
+										</div>
+									</div>
+								</div>
+								<div class="flex-wrap panel-content" data-url = "orderdetail6.html">
+									<div class="flex-cell align-center">
+										<a href=""><img class="orderlistpic" src="images/index/veer-130812528_r2_c2.jpg"/></a>
+									</div>
+									<div class="flex-item marginitemlist">
+										<div class="foodname">轻度照护 每次2小时 每周3次 共4周</div>
+										<div class="tag"><span class="tag_a">三天/周</span></div>
+										<div class="info_price">
+											<div class="good-price">¥1190.00</div>
+											<span class="count">x1</span>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<a href="bill2.html" class="orderbtn-b ml15">查看发票</a>
+									<a href="javascript:closeorder()" class="orderbtn-b ml15">取消订单</a>
+									<a href="pay.html" class="orderbtn ml15">去支付</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-panel-item">
+						<!--<ul class="tab-panel-ul">
+							<li class="center">
+								<div class="nolistbox">
+									<i class="iconfont icon-nolist"></i>
+									<span>暂无订单</span>
+								</div>
+							</li>
+						</ul>-->
+						<ul class="tab-panel-ul">
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105685678</span>
+									<span class="flex-cell align-center muc-orign">待发货</span>
+								</div>
+								<div class="flex-wrap panel-content" data-url = "orderdetail6.html">
+									<div class="flex-cell align-center">
+										<a href=""><img class="orderlistpic" src="images/index/veer-130812528_r2_c2.jpg"/></a>
+									</div>
+									<div class="flex-item marginitemlist">
+										<div class="foodname">轻度照护 每次2小时 每周3次 共4周</div>
+										<div class="tag"><span class="tag_a">三天/周</span></div>
+										<div class="info_price">
+											<div class="good-price">¥1190.00</div>
+											<span class="count">x1</span>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<a href="bill2.html" class="orderbtn-b ml15">查看发票</a>
+									<a href="javascript:refund()" class="orderbtn-b ml15">申请退款</a>
+									<a href="" class="orderbtn ml15">再次购买</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-panel-item">
+						<ul class="tab-panel-ul">
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105685678</span>
+									<span class="flex-cell align-center muc-orign">待收货</span>
+								</div>
+								<div class="flex-wrap panel-content" data-url = "orderdetail6.html">
+									<div class="flex-cell align-center">
+										<a href=""><img class="orderlistpic" src="images/index/veer-130812528_r2_c2.jpg"/></a>
+									</div>
+									<div class="flex-item marginitemlist">
+										<div class="foodname">轻度照护 每次2小时 每周3次 共4周</div>
+										<div class="tag"><span class="tag_a">三天/周</span></div>
+										<div class="info_price">
+											<div class="good-price">¥1190.00</div>
+											<span class="count">x1</span>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<a href="bill2.html" class="orderbtn-b ml15">查看发票</a>
+									<a href="javascript:refund()" class="orderbtn-b ml15">申请退款</a>
+									<a href="" class="orderbtn ml15">确认收货</a>
+								</div>
+							</li>
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105685678</span>
+									<span class="flex-cell align-center muc-orign">待收货</span>
+								</div>
+								<div class="flex-wrap panel-content" data-url = "orderdetail6.html">
+									<div class="flex-cell align-center">
+										<a href=""><img class="orderlistpic" src="images/index/veer-130812528_r2_c2.jpg"/></a>
+									</div>
+									<div class="flex-item marginitemlist">
+										<div class="foodname">轻度照护 每次2小时 每周3次 共4周</div>
+										<div class="tag"><span class="tag_a">三天/周</span></div>
+										<div class="info_price">
+											<div class="good-price">¥1190.00</div>
+											<span class="count">x1</span>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<a href="bill2.html" class="orderbtn-b ml15">查看发票</a>
+									<a href="javascript:refund()" class="orderbtn-b ml15">申请退款</a>
+									<a href="" class="orderbtn ml15">确认收货</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-panel-item">
+						<ul class="tab-panel-ul">
+							<li class="tab-panel-list">
+								<div class="align-center flex-wrap panel-listtitle">
+									<span class="flex-item">FW202204105685678</span>
+									<span class="flex-cell align-center muc-orign">交易完成</span>
+								</div>
+								<div class="flex-wrap panel-content" data-url = "orderdetail6.html">
+									<div class="flex-cell align-center">
+										<a href=""><img class="orderlistpic" src="images/index/veer-130812528_r2_c2.jpg"/></a>
+									</div>
+									<div class="flex-item marginitemlist">
+										<div class="foodname">轻度照护 每次2小时 每周3次 共4周</div>
+										<div class="tag"><span class="tag_a">三天/周</span></div>
+										<div class="info_price">
+											<div class="good-price">¥1190.00</div>
+											<span class="count">x1</span>
+										</div>
+									</div>
+								</div>
+								<div class="layout-right orderbtnbox">
+									<div class="morebox">
+										<a href="bill1.html" class="morebox-li">查看发票</a>
+									</div>
+									<span class="more-jq33" onclick="morestatus(this)">更多</span>
+									<div class="layertips" onclick="closelayertips(this)"></div>
+									<a href="javascript:delorder()" class="orderbtn-b ml15">删除订单</a>
+									<a href="logistics3.html" class="orderbtn-b ml15">查看物流</a>
+									<a href="shopappraise.html" class="orderbtn ml15">评价</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--返回顶部-->
+	  	<a class="totop iconfont">&#xe60e;</a>
+	</div>	
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/layer_mobile/layer.js"></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+
+	<script>
+		
+		function morestatus(obj){
+			$(obj).prev().fadeIn();
+			$(obj).next().fadeIn();
+		}
+		
+		function closelayertips(obj){
+			$(obj).fadeOut();
+			$(obj).parent().find('.morebox').fadeOut();
+		}
+		
+		$(function(){
+			
+			$('.aui-myOrder-fix .tab-nav-item').each(function(index){
+				$('.aui-myOrder-fix .tab-nav-item').eq(0).click();
+				$(this).on('click',function(){
+					$(this).addClass('tab-active').siblings().removeClass('tab-active');
+					$(".tab-panel .tab-panel-item").eq(index).show().siblings().hide();
+				})
+			})
+			
+		})
+		
+		function closeorder(){
+			ModalHelper.afterOpen();
+			layer.open({
+				shadeClose: false, //禁止遮罩关闭
+				content:'<i class="iconfont" style="vertical-align: middle;font-size:1rem;color: #ff4500;">&#xe636;</i><p style="font-size: 0.28rem;text-align: center;"> 是否取消订单？</p>',
+				btn:['取消订单','我在想想'],
+				no:function(){//取消
+					ModalHelper.beforeClose();
+				},
+				yes: function(index, layero){//确认
+					ModalHelper.beforeClose();
+	                layer.close(index); //如果设定了yes回调，需进行手工关闭		                
+				}
+			})
+		}
+		
+		function refund(){
+			ModalHelper.afterOpen();
+			layer.open({
+				shadeClose: false, //禁止遮罩关闭
+				content:'<i class="iconfont" style="vertical-align: middle;font-size:1rem;color: #ff4500;">&#xe636;</i><p style="font-size: 0.28rem;text-align: center;"> 是否申请退款？</p>',
+				btn:['申请退款','我在想想'],
+				no:function(){//取消
+					ModalHelper.beforeClose();
+				},
+				yes: function(index, layero){//确认
+					ModalHelper.beforeClose();
+	                layer.close(index); //如果设定了yes回调，需进行手工关闭	
+	                window.location.href='shoprefund.html'
+				}
+			})
+		}
+		
+		function delorder(){
+			ModalHelper.afterOpen();
+			layer.open({
+				shadeClose: false, //禁止遮罩关闭
+				content:'<i class="iconfont" style="vertical-align: middle;font-size:1rem;color: #ff4500;">&#xe636;</i><p style="font-size: 0.28rem;text-align: center;"> 是否删除订单？</p>',
+				btn:['删除','取消'],
+				no:function(){//取消
+					ModalHelper.beforeClose();
+				},
+				yes: function(index, layero){//确认
+					ModalHelper.beforeClose();
+	                layer.close(index); //如果设定了yes回调，需进行手工关闭		                
+				}
+			})
+		}
+		
+		$('#clickbar').click(function(){
+			var followButton = $(this);
+			if (followButton.hasClass("following")){       
+	            followButton.removeClass("following");       
+	            $(".tab-nav[data-tab = 'nav']").css('height','0.8rem');
+	            followButton.children().css('transform','none');
+	        }else{
+	            followButton.addClass("following");  
+	            $(".tab-nav[data-tab = 'nav']").css('height','auto');
+	            followButton.children().css('transform','rotateZ(-180deg)');
+	        }
+
+		})
+		
+		 
+		function scrollTap(){
+			location.href="orderdetail.html?scrollval=1";
+		}
+
+	</script>
+</body>
+</html>

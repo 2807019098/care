@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="images/Logo.png">
+	<link rel="icon" type="image/jpg" href="images/Logo.png">
+	<link rel="stylesheet" href="css/base.css" />
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div class="container loginBox">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>登录</h2>
+    			<i class="tipsIcon"></i>
+    		</div>
+		</header>
+		<div class="headImg">
+			<img src="images/Logo.png" />
+		</div>
+		<div class="shoplist">
+			<ul class="loginBox" id="login">
+				<li class="list loginBox" id="login1">
+					<form class="form" autocomplete="off" name="form" action="" method="get">
+						<ol>
+							<li class="formli">
+								<div class="formlist input border">
+									<input type="number" maxlength="11" placeholder="请输入您的手机号" value="" id="phone" />
+									<span class="spin"></span>
+								</div>
+							</li>
+							<li class="formli">
+								<div class="formlist input border">
+									<input type="password" placeholder="请输入密码" value="" id="pwd" />
+									<span class="spin"></span>
+								</div>
+							</li>
+							<li class="formli">
+								<div class="formlist input border">
+									<input type="text" placeholder="扫描推荐人二维码(选填)" value="" />
+									<span class="spin"></span>
+									<i class="iconfont scan_icon">&#xe7aa;</i>
+								</div>
+							</li>
+							<li class="formli">
+								<div class="formlist" style="justify-content: flex-end;padding: .2rem 0;">
+									<div style="flex: 1;">
+										<a class="formlistcheck" href="javascript:changeLogin(0)">
+											验证码登录
+										</a>
+									</div>
+									<a href="forgetpwd.html" class="formlistcheck">
+										忘记密码
+									</a>
+								</div>
+							</li>
+							<li class="formli">
+								<div class="formlist">
+									<button class="formli_btn" type="button" onclick="submitData(0)">登  录</button>
+								</div>
+							</li>
+							<li class="formli">
+								<div class="formlist" style="padding: .2rem 0;">
+									<div class="formlistcheck">
+										<label for="checkbox">
+											<input type="checkbox" value="" name="check" id="checkbox" />
+										</label>
+										<p>
+											<label for="checkbox">我已阅读并同意</label>
+											<a class="check_a" onclick="toKnow()">《用户协议》</a>
+											<a class="check_a" onclick="toPrivacyPolicy()">《隐私条款》</a>
+										</p>
+									</div>
+								</div>
+							</li>
+						</ol>
+					</form>
+    			</li>
+    			<li class="list loginBox hide" id="login2">
+					<form class="form" autocomplete="off" name="form" action="" method="get">
+						<ol>
+							<li class="formli">
+								<div class="formlist input border">
+									<input type="number" maxlength="11" placeholder="请输入您的手机号" value="" id="mobile" />
+									<span class="spin"></span>
+								</div>
+							</li>
+							<li class="formli">
+								<div class="formlist input border">
+									<input type="number" placeholder="请输入短信验证码" value="" id="sms" />
+									<span class="spin"></span>
+									<input type="button" value="获取验证码" id="SendCode" onclick="checkSms()" />
+								</div>
+							</li>
+							<li class="formli">
+								<div class="formlist input border">
+									<input type="text" placeholder="扫描推荐人二维码(选填)" value="" />
+									<span class="spin"></span>
+									<i class="iconfont scan_icon">&#xe7aa;</i>
+								</div>
+							</li>
+							<li class="formli">
+								<div class="formlist" style="justify-content: flex-end;padding: .2rem 0;">
+									<div style="flex: 1;">
+										<a class="formlistcheck" href="javascript:changeLogin(1)">
+											密码登录
+										</a>
+									</div>
+									<a href="forgetpwd.html" class="formlistcheck">
+										忘记密码
+									</a>
+								</div>
+							</li>
+							<li class="formli">
+								<div class="formlist">
+									<button class="formli_btn" type="button" onclick="submitData(1)">登  录</button>
+								</div>
+							</li>
+							<li class="formli">
+								<div class="formlist" style="padding: .2rem 0;">
+									<div class="formlistcheck">
+										<label for="checkbox">
+											<input type="checkbox" value="" name="check" id="checkbox" />
+										</label>
+										<p>
+											<label for="checkbox">我已阅读并同意</label>
+											<a class="check_a" onclick="toKnow()">《用户协议》</a>
+											<a class="check_a" onclick="toPrivacyPolicy()">《隐私条款》</a>
+										</p>
+									</div>
+								</div>
+							</li>
+						</ol>
+					</form>
+    			</li>
+			</ul>
+		</div>
+	</div>
+	<div class="noteBody" id="noteBody">
+		<h2 class="noteHead">
+			<div class="closeNote" onclick="closeNote()">关闭</div>
+		</h2>
+		<div class="nodeContent" id="nodeContent"></div>
+	</div>
+	<div class="fireworks">
+		<div class="fireworkstext">
+		    <div class="firetips">
+		    	<h2>登录成功</h2>
+		    	<h3>恭喜您登录成功</h3>
+		    	<h4>请上传您全部相关职业资格证书，</h4>
+		    	<h4>资格证书越多通过率和接单率越高。</h4>
+		    	<button type="button" onclick="window.location.href = 'accountInformation.html';">去上传</button>
+		    </div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.0.0.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-weui.min.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		
+		$(".loginBox .input input").each(function(){
+			$(this).focus(function(){
+				$(this).next().addClass('animation');
+			})
+			$(this).blur(function(){
+				$(this).next().removeClass('animation');
+			})
+		})
+		
+		const changeLogin = (status) => {
+			switch (status){
+				case 0:
+					$("#login1").addClass("hide");
+					$("#login2").removeClass("hide");
+					break;
+				case 1:
+					$("#login2").addClass("hide");
+					$("#login1").removeClass("hide");
+					break;
+				default:
+					break;
+			}
+			
+		}
+		
+		const submitData = (status) => {
+			let phone = $("#phone").val();
+			let phonereg = /^(((13[0-9]{1})|(15[0-9]{1})|(16[6]{1})|(17[0-9]{1})|(18[0-9]{1})|(19[8-9]{1}))+\d{8})$/;
+			let pwd = $("#pwd").val();
+			let mobile = $("#mobile").val();
+			let sms = $("#sms").val();
+			
+			switch (status){
+				case 0:
+					if (phone == ""){
+						$.toast("请输入您的手机号", "text");
+						form.phone.focus();
+					} else if (!phonereg.test(phone)){
+						$.toast("请填写正确的手机号码", "text");
+						form.phone.focus();
+					} else if (pwd == ""){
+						$.toast("请输入密码", "text");
+						form.pwd.focus();
+					} else {
+						$.toast("登录成功", "text");
+						$(".fireworks").addClass('open').css('background','rgba(0,0,0,0.6)');
+						$(".fireworkstext").addClass('dloor');
+					}
+					break;
+				case 1:
+					if (mobile == ""){
+						$.toast("请输入您的手机号", "text");
+						form.mobile.focus();
+					} else if (!phonereg.test(mobile)){
+						$.toast("请填写正确的手机号码", "text");
+						form.mobile.focus();
+					} else if (sms == ""){
+						$.toast("请输入验证码", "text");
+						form.sms.focus();
+					} else {
+						$.toast("登录成功", "text");
+						$(".fireworks").addClass('open').css('background','rgba(0,0,0,0.6)');
+						$(".fireworkstext").addClass('dloor');
+					}
+					break;
+				default:
+					break;
+			}
+			
+			
+		}
+		
+		const checkSms = () => {
+			var mobile = $("#mobile").val();
+			var phonereg = /^(((13[0-9]{1})|(15[0-9]{1})|(16[6]{1})|(17[0-9]{1})|(18[0-9]{1})|(19[8-9]{1}))+\d{8})$/;
+			
+			if (mobile == ""){
+				$.toast("请输入您的手机号", "text");
+				form.mobile.focus();
+			} else if (!phonereg.test(mobile)){
+				$.toast("请填写正确的手机号码", "text");
+				form.mobile.focus();
+			} else {
+				SendInfo()
+			}
+		}
+		
+		
+		//短信验证码
+
+		var $InterValObj; //timer变量，控制时间
+		var $count = 60; //间隔函数，1秒执行
+		var $curCount;//当前剩余秒数
+		var $code = ""; //验证码
+		var $codeLength = 6;//验证码长度
+		const SendInfo = () => {
+			$curCount = $count;
+			//产生验证码
+			for (var i = 0; i < $codeLength; i++) {
+				$code += parseInt(Math.random() * 9).toString();
+			}
+			//设置button效果，开始计时
+			$("#SendCode").attr("disabled",true);
+			$("#SendCode").val( + $curCount + "秒后再获取");
+			$InterValObj = window.setInterval(SetResetTime, 1000); //启动计时器，1秒执行一次
+		}
+		
+		//timer处理函数
+		const SetResetTime = () => {
+			if ($curCount == 0) {                
+				window.clearInterval($InterValObj);//停止计时器
+				$("#SendCode").removeAttr("disabled");//启用按钮
+				$("#SendCode").val("获取验证码");
+				$code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效    
+			}else {
+				$curCount--;
+				$("#SendCode").val( + $curCount + "秒后再获取");
+			}
+		}
+		
+		const toPrivacyPolicy = () => {
+			var url = 'privacyPolicy.html .container .privacyPolicy';
+			noteBody();
+			$("#nodeContent").load(url,"",function(){
+				
+			})
+		}
+		
+		const toKnow = () => {
+			var url = 'know.html .container .privacyPolicy';
+			noteBody();
+			$("#nodeContent").load(url,"",function(){
+				
+			})
+		}
+		
+		const noteBody = () => {
+			$("#noteBody").animate({
+				top:'0'
+			},300)
+		}
+		
+		const closeNote = () => {
+			$("#noteBody").animate({
+				top:'100%'
+			},300)
+		}
+	</script>
+</body>
+</html>

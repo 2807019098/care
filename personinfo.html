@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="">
+	<link rel="icon" type="image/jpg" href="">
+    <link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/base.css" />
+
+</head>
+<body>
+	<div class="container scroll">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>个人资料</h2>
+    		</div>
+		</header>
+		<div class="contentBox contentBoxset mt20">
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">头像</div>
+				<div class="inner_r2">
+					<label><input type="file" id="file" onchange="changeimg(this)" /></label>
+					<img class="userIconImg" src="images/list.png" />
+				</div>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">姓名</div>
+				<input class="inner_r2" type="text" id="" value="xxx" readonly="readonly">
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">家属设置</div>
+				<a class="inner_r2" href="familyList.html">
+					<span>xxx</span>
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">性别</div>
+				<input class="inner_r2" type="text" id="" placeholder="请选择" readonly="readonly">
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">生日</div>
+				<input class="inner_r2" type="text" id="" placeholder="请选择" readonly="readonly">
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">学历</div>
+				<input class="inner_r2" type="text" id="" placeholder="请选择" readonly="readonly">
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">婚姻状况</div>
+				<input class="inner_r2" type="text" id="" placeholder="请选择" readonly="readonly">
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">星座</div>
+				<input class="inner_r2" type="text" id="" placeholder="请选择" readonly="readonly">
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">身高</div>
+				<input class="inner_r2" type="text" id="" placeholder="请选择" readonly="readonly">
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">体重</div>
+				<input class="inner_r2" type="text" id="" placeholder="请选择" readonly="readonly">
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">职业</div>
+				<input class="inner_r2" type="text" id="" placeholder="请选择" readonly="readonly">
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">收入</div>
+				<input class="inner_r2" type="text" id="" placeholder="请选择" readonly="readonly">
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">爱好</div>
+				<div class="inner_r2 select_type">
+					<input type="hidden" name="select_type" value="">
+				</div>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/jquery.new.select.min.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		const changeimg = (obj) => {
+			var files = $(obj)[0].files;
+			var length = $(obj)[0].files.length;
+			$.each(files, function(key, value){
+                var reads = new FileReader();
+                reads.onload=function (e) {
+//              	$(obj).parent().next().attr("src", this.result);
+//              	console.log(this.result)
+		        };
+		        reads.readAsDataURL(value);
+			})
+		}
+		
+		let list = [{
+			id:1,
+			name:'电影'
+		},{
+			id:2,
+			name:'电视剧'
+		},{
+			id:3,
+			name:'综艺'
+		},{
+			id:4,
+			name:'直播'
+		},{
+			id:5,
+			name:'少儿'
+		},{
+			id:6,
+			name:'动漫'
+		},{
+			id:7,
+			name:'新闻'
+		},{
+			id:8,
+			name:'建党百年'
+		},{
+			id:9,
+			name:'理想'
+		},{
+			id:10,
+			name:'纪录片'
+		},{
+			id:11,
+			name:'音乐'
+		},{
+			id:12,
+			name:'饭团'
+		},{
+			id:13,
+			name:'游戏'
+		}]
+		let select = new pickerSelect({
+			el:'select_type',
+			type:"checkbox",
+			list:list
+		})
+
+		$(".select_type").on('click',function(){
+			select.click({
+				val:$("input[name='select_type']").val(),
+				callBack:function(res){
+					$("input[name='select_type']").val(res.val)
+					console.log(res.val)
+				}
+			})
+		})
+//		let select1 = new pickerSelect({
+//			el:'select_type1',
+//			list:list
+//		})
+//
+//		$(".select_type1").on('click',function(){
+//			select1.click({
+//				val:$("input[name='select_type1']").val(),
+//				callBack:function(res){
+//					$("input[name='select_type1']").val(res.val)
+//				}
+//			})
+//		})
+	</script>
+</body>
+</html>

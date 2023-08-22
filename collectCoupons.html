@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+		<meta name="applicable-device" content="pc,mobile"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-touch-fullscreen" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta name="format-detection" content="telephone=no"/>
+		<meta http-equiv="X-UA-Compatible" content="edge">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="full-screen" content="yes">
+		<meta name="wap-font-scale" content="no">
+		<script src="js/flexible.js"></script>
+		<title>智慧居家养老平台</title>
+		<link rel="apple-touch-icon" type="image/jpg" href="">
+		<link rel="icon" type="image/jpg" href="">
+	    <link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="swiper-bundle.min.css" />
+		<style>
+			
+		</style>
+	</head>
+
+	<body style="background: #de1829;color: #ffffff;">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>优惠券领取</h2>
+    		</div>
+		</header>
+		<!-- 顶部大图 -->
+		<div class="banner">
+			<img src="images/bg_r2_c1.jpg" alt="">
+		</div>
+		<!-- 礼包内容 -->
+		<div class="month-detail active">
+			<div class="coupon one">
+				<ul>
+					<li>
+						<p class="title">新用户超值券</p>
+						<p class="money"><i>&yen;</i><span>25</span></p>
+						<p class="type">日常用品券</p>
+						<div class="btn">
+							<a href="javascript:getCoupon();">立即领取<i></i></a>
+						</div>
+					</li>
+					<li>
+						<p class="title yellow">完成第一单即可领取</p>
+						<p class="money"><i>&yen;</i><span>10</span></p>
+						<p class="type">日常用品券</p>
+						<div class="btn">
+							<a href="javascript:getCoupon();">立即领取<i></i></a>
+						</div>
+					</li>
+					<li>
+						<p class="title yellow">完成第二单即可领取</p>
+						<p class="money"><i>&yen;</i><span>15</span></p>
+						<p class="type">满199减15</p>
+						<div class="btn">
+							<a href="javascript:getCoupon();">立即领取<i></i></a>
+						</div>
+					</li>
+					<li>
+						<p class="title yellow">完成第三单即可领取</p>
+						<p class="money"><i>&yen;</i><span>25</span></p>
+						<p class="type">满299减25</p>
+						<div class="btn">
+							<a href="javascript:getCoupon();">立即领取<i></i></a>
+						</div>
+					</li>
+					<li>
+						<p class="title yellow">每天9点限量领取</p>
+						<p class="money"><i>&yen;</i><span>25</span></p>
+						<p class="type">满299减25</p>
+						<div class="btn">
+							<a href="javascript:getCoupon();">立即领取<i></i></a>
+						</div>
+					</li>
+					<li>
+						<p class="title yellow">每天9点限量领取</p>
+						<p class="money"><i>&yen;</i><span>25</span></p>
+						<p class="type">日常用品券</p>
+						<div class="btn">
+							<a href="javascript:getCoupon();">立即领取<i></i></a>
+						</div>
+					</li>
+					<li>
+						<p class="title yellow">每天9点限量领取</p>
+						<p class="money"><i>&yen;</i><span>25</span></p>
+						<p class="type">日常用品券</p>
+						<div class="btn">
+							<a href="javascript:getCoupon();">立即领取<i></i></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="month-detail active">
+			<div class="coupon two">
+				<div class="listContent">
+					<div class="listContentUl swiper coupon" id="TouchNav02">
+					  <div class="swiper-wrapper">
+					    <div class="swiper-slide active">
+					    	<span>热门精选</span>
+					    </div>
+					    <div class="swiper-slide">
+					    	<span>健康检测</span>
+					    </div>
+					    <div class="swiper-slide">
+					    	<span>适老好物</span>
+					    </div>
+					    <div class="swiper-slide">
+					    	<span>营养食品</span>
+					    </div>
+					  </div>
+					</div>
+					<div class="listGoodsUl">
+						<div class="swiper-container" id="TouchInfo02">
+					        <div class="swiper-wrapper">
+					            <div class="swiper-slide swiper-list">
+									<div class="shoplist">
+										<ul class="coupon">
+											<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/168698/38/23165/120864/6191b005E82633d83/919c1192003f02e2.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">葵花护肝片100片疏肝理气健脾消食降低转氨酶慢性肝炎及早期肝硬化</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满100减10元</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>26.90</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+						        			<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/200278/18/15099/93093/617b7e55Ea0b504ad/30ad960c8a10621b.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">步长 稳心颗粒  9g/袋*18袋/盒 气虚乏力 阴虚心悸  胸闷心慌 气短用药 胸痛室性房性早搏口服冲剂颗粒</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满100减10元</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>48.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+						        			<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/114522/27/21517/129492/62319dceE734ae633/f5985478d5aa8476.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">优立通 非布司他片 40mg*7片*2板 适用于痛风患者高尿酸血症的长期治疗</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满100减10元</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>26.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+											<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/99548/20/25692/116246/62410e31E7aa1a77d/096fcd0fdf0b6aac.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">盖三淳 骨化三醇软胶囊 0.25μg*10粒 骨质疏松 肾功能衰竭</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满100减10元</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>34.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+										</ul>
+									</div>
+					            </div>
+					            <div class="swiper-slide swiper-list">
+					            	<div class="shoplist">
+						            	<ul class="coupon">
+											<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/209459/5/8514/159607/618a3a49E2e93abe0/f634a287d690d2dd.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">秀域超V热动力AR智能机器人按摩30分钟 提高身体局部温度 肩颈椎背按摩热敷 到店服务</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满100减10元</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>28.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+						        			<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/jfs/t1/102148/37/24462/713861/621da1afE82a78cec/e8e0a50e219cdd3b.png" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">上海仁爱医院体检中心 肿瘤筛查体检套餐单人体检 (含12项肿瘤标志物检测） 电子券</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满200减20元</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>1080.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+						        			<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/212911/15/14835/117040/62315059Effcbc609/8b118ae0c1622a83.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">【基因故事】 糖尿病用药基因检测 二甲双胍、瑞格列奈、格列苯脲、胰岛素等17种糖尿病常用药物</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满100减10元</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>1428.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+											<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/216349/11/12251/142947/6205d4f5E8de5eca6/202bceff9597073c.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">美年大健康体检套餐 孝心升级优选 动脉硬化检测 中老年父母体检 全国通用 男女通用</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满2件，总价打9折</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>1049.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+										</ul>
+									</div>
+					            </div>
+					            <div class="swiper-slide swiper-list">
+					            	<div class="shoplist">
+						            	<ul class="coupon">
+											<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/185419/26/19384/110988/611a035bEcd6dff12/4e4e7192169e0b1f.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">康富来牦牛骨髓壮骨粉600g罐装(30g×20袋)增强免疫力骨骼关节术后含钙营养粉独立包装孝敬父母</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满100减10元</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>99.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+						        			<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/212164/16/15033/451335/62329c48E1096eec0/488c8bb395861755.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">北京同仁堂健康 青源堂吉林长白山人参5支皂苷含量高西洋参红参滋补泡酒材料50克 礼品人参礼盒装</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满300元，可减30元</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>59.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+						        			<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/220299/40/7825/192115/61b948aeEfa7c3103/0010cabffd4d0ffd.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">福东海 党参节120g 甘肃土党参罐装 道地产地 手工挑选 参条完整 煲汤食材黄芪当归茯苓芡实煲汤食材 养生茶</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满100减10元</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>25.90</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+											<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/195829/2/18225/386203/611626a2Ebd2d1af8/884abb23a269e5ec.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">福东海 雪莲子皂角米100克 精选云南双荚植物胶质桃胶雪燕煲汤材料</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满2件，总价打9折</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>43.90</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+										</ul>
+									</div>
+					            </div>
+					            <div class="swiper-slide swiper-list">
+					            	<div class="shoplist">
+						            	<ul class="coupon">
+											<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/194188/33/8795/156760/60cc8844Eb7fa085e/75126ca9a2f5bf76.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">黄金搭档 褪黑素维生素B6片改善睡眠失眠 成人中老年退黑素睡眠片安眠助眠 60片</div>
+						            						<div class="tag">
+						            							<span class="tag_b">赠品</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>39.90</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+						        			<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/6291/11/10269/187965/60b490aeE7a131ffc/5e8217bca06ba783.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">钙尔奇氨糖软骨素加钙片增加骨密度成人骨质疏松中老年人腰腿疼抽筋男女性补钙补软骨保护关节骨骼 买赠共140粒（店长推荐）</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满299元减50</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>98.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+						        			<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/103619/24/25742/148513/623d68e7Ec7ee5e00/efd1269726a78384.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">修正 褪黑素胶囊改善睡眠失眠 成人中老年退黑素睡眠片60粒</div>
+						            						<div class="tag">
+						            							<span class="tag_b">赠品</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>45.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+											<li class="list">
+						        				<a href="" class="list_a">
+						        					<div class="listimg">
+						        						<img src="https://m.360buyimg.com/babel/s326x326_jfs/t1/210378/21/10510/195379/619da886E10553838/23f9461471994846.jpg" />
+						        					</div>
+						        					<div class="listRight">
+						        						<div class="listUp">
+						            						<div class="name">Schiff MegaRed脉拓 辅酶Q10软胶囊片 高浓度 200mg 美国原装进口 coq10 含钙成人中老年人</div>
+						            						<div class="tag">
+						            							<span class="tag_b">满100减10元</span>
+						            						</div>
+						        						</div>
+						        						<div class="listDown">
+						        							<div class="listDownL">
+						        								<b>&yen;</b><span>239.00</span>
+						        							</div>
+						        							<div class="listDownR">
+						        								<div class="listbtn">立即购买</div>
+						        							</div>
+						        						</div>
+						        					</div>
+						        				</a>
+						        			</li>
+										</ul>
+									</div>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+		<script type="text/javascript" src="js/layer_mobile/layer.js" ></script>
+		<script type="text/javascript" src="js/swiper-bundle.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-weui.min.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript">
+			const TouchNav2 = new Swiper('#TouchNav02', {
+				freeMode: false,
+				freeModeMomentumRatio: 0.5,
+				slidesPerView: 'auto',
+				on: {
+					tap: function(swiper) {
+						if(swiper.clickedIndex !== undefined) {
+							TouchInfo2.slideTo(swiper.clickedIndex);
+						}
+					}
+				}
+			});
+			
+		    const TouchInfo2 = new Swiper('#TouchInfo02', {
+				freeMode: false,
+				freeModeMomentumRatio: 0.5,
+				slidesPerView: 'auto',
+				autoHeight: 'auto',
+				on: {
+					slideChangeTransitionStart: function(e){
+						$(TouchNav2.slides).removeClass('active');
+						$(TouchNav2.slides).eq(e.realIndex).addClass('active');
+					},
+					slideChangeTransitionEnd: function(e){
+						
+					}
+				}
+			});
+			
+			const getCoupon = () => {
+				$.toast("领取成功", "text");
+			};
+		</script>
+	</body>
+
+</html>

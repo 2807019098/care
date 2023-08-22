@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="">
+	<link rel="icon" type="image/jpg" href="">
+    <link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/base.css" />
+
+</head>
+<body>
+	<div class="container scroll">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>账户设置</h2>
+    		</div>
+		</header>
+		<div class="contentBox contentBoxset mt20">
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">我的名片</div>
+				<a class="inner_r2" href="visitingCard.html">
+					<i class="iconfont" style="font-size: 50px;font-weight: normal;"></i>
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont"></i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">个人资料</div>
+				<a class="inner_r2" href="personinfo.html">
+					<span>&nbsp;</span>
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">证照信息</div>
+				<a class="inner_r2" href="accountInformation.html">
+					<span>&nbsp;</span>
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">账号安全</div>
+				<a class="inner_r2" href="accountSecurity.html">
+					<span>&nbsp;</span>
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">意见反馈</div>
+				<a class="inner_r2" href="feedback.html">
+					<span>&nbsp;</span>
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">帮助中心</div>
+				<a class="inner_r2" href="help.html">
+					<span>&nbsp;</span>
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">关于我们</div>
+				<a class="inner_r2" href="about.html">
+					<span>&nbsp;</span>
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			
+		</div>
+		<div class="contentBox contentBoxset mt20">
+			<div class="inner_title inner_title_tes" style="justify-content: center;">
+				<a class="inner_l" href="javascript:exit()">退 出</a>
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/layer_mobile/layer.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		function exit(){
+			layer.open({
+				shadeClose: false, //禁止遮罩关闭
+				content:'<i class="iconfont" style="vertical-align: middle;font-size:1rem;color: #C6373B;">&#xe636;</i><p style="font-size: 0.28rem;text-align: center;"> 是否退出登录？</p>',
+				btn:['确定','取消'],
+				no:function(){//取消
+					
+				},
+				yes: function(index, layero){//确认
+	                layer.close(index); //如果设定了yes回调，需进行手工关闭	
+	                window.location.href = 'login.html'
+				}
+			})
+		}
+	</script>
+</body>
+</html>

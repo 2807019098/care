@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="">
+	<link rel="icon" type="image/jpg" href="">
+    <link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/base.css" />
+
+</head>
+<body>
+	<div class="container scroll">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>我的名片/邀请码</h2>
+    		</div>
+		</header>
+		<div class="contentBox contentBoxset mt20">
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">
+					<img class="userIconImg" src="images/list.png" />
+				</div>
+				<div class="inner_r2" style="text-align: left;display: flex;flex-direction: column;">
+					<span>****菲</span>
+					<span>134****4532</span>
+					<span>上海市浦东新区张江镇</span>
+				</div>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+		</div>
+		<div class="contentBox contentBoxset mt20">
+			<div class="inner_title inner_title_tes" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+				<img id="imgLogo" src="images/Logo.png" hidden>
+				<div id="container">
+		            <canvas width="400" height="400"></canvas>
+		        </div>
+		        <div style="font-weight: bold;"><span>BV334942034SFSADJFLDS</span>&nbsp;<span>复制</span></div>
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/jqueryqr.js" ></script>
+	<script type="text/javascript" src="js/qrcode.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		$(document).ready(function () {
+            $('#container').erweima({
+                mode:4,
+                mSize:18,
+                minVersion:7,
+                fill:'#4ED01F',
+                background:'#fff',
+                text:'BV334942034SFSADJFLDS',
+                size:300,
+                mode:4,
+                radius:50,
+                image:$("#imgLogo")[0]
+            });
+        });
+	</script>
+</body>
+</html>

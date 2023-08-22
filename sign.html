@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="">
+	<link rel="icon" type="image/jpg" href="">
+    <link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<style>
+		
+		
+		
+	</style>
+</head>
+<body>
+	<div class="container scroll">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>签到日历</h2>
+    		</div>
+		</header>
+		<div class="datecontain">
+			<img src="images/bg01.png" />
+			<a href="rewardlist.html" class="tips_btn">奖励明细</a>
+			<h2>
+				<p>今日已签到，获得奖励</p>
+				<p class="signInfo">
+					<i class="iconfont">&#xe6b5;</i>
+					<s>x</s>
+					<b>2</b>
+				</p>
+			</h2>
+			<b class="month" id="month"></b>
+		</div>
+		<div class="contentUI mt20">
+			<ol class="weekUI">
+				<li>周一</li>
+				<li>周二</li>
+				<li>周三</li>
+				<li>周四</li>
+				<li>周五</li>
+				<li>周六</li>
+				<li>周日</li>
+			</ol>
+			<ul class="Calendardate" id="date">
+				
+			</ul>
+		</div>
+		
+	</div>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/layer_mobile/layer.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		
+		/**
+		 * 格式yyyy-MM
+		 * @param {Object} currentMonth 当前月份
+		 */
+		const getCalendar = (currentMonth) => {
+			if(currentMonth.indexOf("-") < 0) {
+				return;
+			}
+			var calendar = [];
+			var myDate = currentMonth.split("-")[1] * 1;
+			computeDate(currentMonth).forEach((item, index) => {
+				var iscurrentmonth = false;
+				if(myDate == item.split("-")[1] * 1) {
+					iscurrentmonth = true;
+				}
+				var code = new Date(item).getDay();
+				var day = '';
+				switch (code) {
+					case 0:
+						day = "日";
+						break;
+					case 1:
+						day = "一";
+						break;
+					case 2:
+						day = "二";
+						break;
+					case 3:
+						day = "三";
+						break;
+					case 4:
+						day = "四";
+						break;
+					case 5:
+						day = "五";
+						break;
+					case 6:
+						day = "六";
+						break;
+				}
+				calendar.push({
+					"weeknum": new Date(item).getDay() == 0 ? 7 : new Date(item).getDay(),
+					"week": day,
+					"date": item,
+					"day": item.split("-")[2],
+					"iscurrentmonth": iscurrentmonth
+				});
+			});
+			return calendar;
+		}
+		 
+		/**
+		 * 格式yyyy-MM
+		 * @param {Object} currentMonth 当前月份
+		 */
+		const computeDate = (currentMonth) => {
+			if(currentMonth.indexOf("-") < 0) {
+				return;
+			}
+			var myDate = currentMonth.split("-");
+			// 上个月的需要显示的天数
+			var preMonthDate = [];
+			// 当月需要显示的天数
+			var currentMonthDate = [];
+			// 下个月需要显示的天数
+			var nextMonthDate = [];
+			// 显示的总格数
+			var total = 6 * 7;
+			var currentMonthDays = getMonthDays(myDate[0], myDate[1]);
+		 
+			// 当前月1号是周几
+			var week = (new Date(currentMonth + '-01').getDay() == 0 ? 7 : new Date(currentMonth + '-01').getDay()) - 1;
+			// 存储上月要显示的日期
+			if(week > 0) {
+				var dateTime = new Date(currentMonth + "-01");
+				for(var i = 0; i < week; i++) {
+					dateTime = dateTime.setDate(dateTime.getDate() - 1);
+					dateTime = new Date(dateTime);
+					preMonthDate.push(getNowFormatDate(dateTime));
+				}
+				preMonthDate.reverse();
+			}
+			//console.info(preMonthDate);
+		 
+			// 存储当月要显示的日期
+			var currentTime = new Date(currentMonth + "-01");
+			currentMonthDate.push(getNowFormatDate(currentTime));
+			for(var i = 0; i < currentMonthDays - 1; i++) {
+				currentTime = currentTime.setDate(currentTime.getDate() + 1);
+				currentTime = new Date(currentTime);
+				currentMonthDate.push(getNowFormatDate(currentTime));
+			}
+			//console.info(currentMonthDate);
+		 
+			// 存储下个月的日期
+			var nextDays = (total - currentMonthDays - week);
+			if(nextDays > 0) {
+				var nextYear = myDate[0];
+				var nextMonth = myDate[1];
+				if(myDate[1] >= 12) {
+					nextMonth = 1;
+					nextYear++;
+				} else {
+					nextMonth++;
+				}
+				var nextTime = new Date(nextYear + "-" + nextMonth + "-01");
+		 
+				nextMonthDate.push(getNowFormatDate(nextTime));
+				for(var i = 0; i < nextDays - 1; i++) {
+					nextTime = nextTime.setDate(nextTime.getDate() + 1);
+					nextTime = new Date(nextTime);
+					nextMonthDate.push(getNowFormatDate(nextTime));
+				}
+			}
+			//console.info(nextMonthDate);
+		 
+			// 合并数据
+			return preMonthDate.concat(currentMonthDate, nextMonthDate);
+		}
+		 
+		/**
+		 * 获取当月天数
+		 * @param {Object} year 年份
+		 * @param {Object} month 月份
+		 */
+		const getMonthDays = (year, month) => {
+			return new Date(year, month, 0).getDate();
+		}
+		 
+		/**
+		 * 返回格式 yyyy-MM-dd
+		 * @param {Object} date
+		 */
+		const getNowFormatDate = (date) => {
+			var seperator1 = "-";
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			var strDate = date.getDate();
+			if(month >= 1 && month <= 9) {
+				month = "0" + month;
+			}
+			if(strDate >= 0 && strDate <= 9) {
+				strDate = "0" + strDate;
+			}
+			var currentdate = year + seperator1 + month + seperator1 + strDate;
+			return currentdate;
+		}
+		
+		/**
+		 * 返回格式 yyyy-MM
+		 */
+		const getMonthed = () => {
+			let y = new Date().getFullYear() + '-';
+			let m = (new Date().getMonth() + 1 < 10) ? '0' + (new Date().getMonth() + 1) : (new Date().getMonth() + 1);
+			let d = (new Date().getDate() < 10) ? '0' + new Date().getDate() : new Date().getDate();
+			let currentDate = y + m;
+			return currentDate
+		}
+		
+		/**
+		 * 返回格式 yyyy-MM-dd
+		 */
+		const getToday = () => {
+			let y = new Date().getFullYear() + '-';
+			let m = (new Date().getMonth() + 1 < 10) ? '0' + (new Date().getMonth() + 1) + '-' : (new Date().getMonth() + 1) + '-';
+			let d = (new Date().getDate() < 10) ? '0' + new Date().getDate() : new Date().getDate();
+			let currentDate = y + m + d;
+			return currentDate
+		}
+	
+		const calCalender = () => {
+			var arrLen = getCalendar(getMonthed()).length;
+			cateList = getCalendar(getMonthed());
+			
+			//模拟数据签到
+			for(let i = 0;i < arrLen;i++){
+				if(cateList[i].date <= getToday()){
+					cateList[i].isSign = true;
+				}
+
+			}
+			console.log(cateList)
+		    var result = '';
+		    if(arrLen > 0){
+		        cateList && cateList.map((item, index) => {
+		    		return (
+		    			result +=`<li class="list ${item.date == getToday() ? 'selected' : ''} ${item.iscurrentmonth == false ? 'active' : ''}">
+			        				<div class="circle">
+			        					${item.day}
+			        				</div>
+			        				${
+		        						item.isSign == true ?
+			        						`<span class="iconfont">&#xe69c;</span>`
+			        						:
+			        						``
+		        					}
+			        			 </li>`
+		    		)
+		    	})
+		        
+		    }
+		    $("#month").html(new Date().getMonth() + 1 + `<span class="text">月</span><span class="tips">金豆下单可抵现，快攒豆~</span>`);
+			$("#date").append(result);
+		};
+		
+		window.onload = function() {
+			calCalender();
+		}
+		
+	</script>
+</body>
+</html>

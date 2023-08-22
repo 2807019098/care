@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="">
+	<link rel="icon" type="image/jpg" href="">
+    <link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/base.css" />
+
+</head>
+<body>
+	<div class="container scroll">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>服务投诉</h2>
+    		</div>
+		</header>
+		<div class="contentBox contentBoxset mt20">
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">
+					<img class="userIconImg" style="width: 1.8rem;height: 1.8rem;" src="images/list.png">
+				</div>
+				<div class="inner_r2" style="text-align: left;display: flex;flex-direction: column;">
+					<span>李小燕  女  45岁</span>
+					<span>认知症-初级</span>
+					<span>上海市浦东新区泥城镇云端路125号301室</span>
+				</div>
+			</div>
+		</div>
+		<div class="contentBox contentBoxset mt20">
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">投诉理由</div>
+				<input class="inner_r2" type="text" id="kind" readonly="readonly" placeholder="请选择" />
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes inner_bottom">
+				<textarea class="inner_textarea" id="advice" placeholder="请填写您的投诉内容"></textarea>
+			</div>
+			<div class="inner_title inner_title_tes inner_bottom">
+				<div class="inner_l"><span style="font-size: 0.2rem;">(最多上传6张图片，单张图片不得超过3M，格式为jpg、jpeg、png)</span></div>
+			</div>
+			<div class="inner_title inner_title_tes inner_bottom">
+				<div class="uploadPic">
+					<label class="label" id="show-actions" onclick="openPhoto()">
+						<input type="hidden" multiple="multiple" id="file" value="" onchange="changeimg(this)" />
+						<i class="iconfont upload-icon">&#xe60a;</i>
+					</label>
+				</div>
+			</div>
+		</div>
+		
+		<div class="contentBox contentBoxset mt20">
+			<div class="inner_title inner_title_ces">
+				<div class="inner_c btncolor" onclick="submitData()">提交</div>
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-weui.min.js" ></script>
+	<script type="text/javascript" src="js/mobileSelect.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		
+		const recordSelect = new MobileSelect({
+		    trigger: '#kind',
+		    title: '投诉理由',
+		    wheels: [
+	                {data:[
+	                    "1", "12"
+	                ]}
+	        ],
+		    transitionEnd:function(indexArr, data){
+		        console.log(data);
+		    },
+		    callback:function(indexArr, data){
+		        console.log(data);
+		        $("#kind").val(data[0]);
+		    }  
+		});
+		
+		const submitData = () => {
+			let kind = $("#kind").val();
+			let advice = $("#advice").val();
+			let file = $("#file").val();
+			
+			if (kind == ""){
+				$.toast("请选择您的投诉理由", "text");
+			} else if (advice == ""){
+				$.toast("请填写您的投诉内容", "text");
+			} else if (file == ""){
+				$.toast("请上传投诉截图", "text");
+			} else {
+				$.toast("提交成功", "text");
+				window.history.go(-1);
+			}
+		};
+		
+		
+		const openPhoto = () => {
+			$.actions({
+				title: "选择操作",
+				onClose: function() {
+					
+				},
+				actions: [{
+					text: "相机",
+					className: "color-default",
+					onClick: function() {
+						$.alert("点击了相机")
+					}
+				}, {
+					text: "相册",
+					className: "color-default",
+					onClick: function() {
+						$.alert("点击了相册")
+					}
+				}, {
+					text: "视频",
+					className: "color-default",
+					onClick: function() {
+						$.alert("点击了视频")
+					}
+				}]
+			})
+		};
+		
+		
+		var images = [];
+		
+		const changeimg = (obj) => {
+	        let file = $(obj)[0].files;
+	        let preview = [];
+	        
+	        if (file.size > 5*1024*1024) {
+	            $.toast("图片大小不能超过5MB", "text");
+	            return
+	        }
+	        
+	        if (file.length > 6) {
+	            $.toast("图片最多上传6张", "text");
+	            return
+	        }
+	        
+	        const readAndPreview = (files) => {
+	        	if (/\.(jpe?g|png|gif)$/i.test(files.name)) {
+	        		let reader = new FileReader();
+	        		reader.onload = function(data) {
+	        			let obj = {
+	                        url: URL.createObjectURL(files),
+	                        file: files
+	                    };
+	                    preview.push(obj);
+	                    let newImages = [...images].concat(preview);
+	                    let temp = {};
+                    	let myPreview = [];
+                    	newImages.map(function(item){
+	                        if (!temp[item.file.name]) {
+	                            myPreview.push(item)
+	                            temp[item.file.name] = true;
+	                        }
+	                    })
+                    	images = myPreview;
+                    	getImge();
+	        		};
+	        		reader.readAsDataURL(files);
+	        	}
+	        };
+	        
+	        if (file) {
+	            [].forEach.call(file, readAndPreview);
+	        }
+	        
+		};
+		
+		const getImge = () => {
+		    var result = '';
+		    images && images.map((item, index) => {
+	    		return (
+	    			result =`<div class="label">
+						<img class="upload-img" src=${item.url} />
+						<i class="iconfont del" onclick="deleteImg('${index}', this)">&#xe62c;</i>
+					</div>`
+	    		)
+	    	})
+			$("#label").before(result);
+			if (images.length >= 6) {
+				$("#label").hide();
+			} else {
+				$("#label").show();
+			}
+		};
+		
+		const deleteImg = (index, obj) => {
+	        Array.prototype.remove = function (i) {
+	            const l = this.length;
+	            if (l == 1) {
+	                return []
+	            } else if (l > 1)  {
+	                return [].concat(this.slice(0, i), this.slice(i + 1, l));
+	            }
+	        }
+	        images = images.remove(index);
+	        $(obj).parent().remove();
+	    };
+		
+	</script>
+</body>
+</html>

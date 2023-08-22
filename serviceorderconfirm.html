@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="">
+	<link rel="icon" type="image/jpg" href="">
+    <link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/base.css" />
+
+</head>
+<body>
+	<div class="container itemBanner">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>填写订单</h2>
+    		</div>
+		</header>
+		<div class="contentBox contentBoxset mt20">
+			<div class="inner_title inner_title_ses">
+				
+				<div class="inner_l">
+					<img class="productImg" src="https://img10.360buyimg.com/n2/s240x240_jfs/t1/93376/18/26318/225905/623319feEd9903f89/3ff496fc6bf73cad.jpg" />
+				</div>
+				<div class="inner_r2 message">
+					<section class="detail-section">
+						<div class="inner_title inner_title_bes serviceBox">
+							<div class="detail-name">轻度照护 每次2小时  每周3次  共4周</div>
+						</div>
+						<div class="inner_title inner_title_bes serviceBox">
+							<div class="mus-mark"><s class="mark-zt">三天/周</s></div>
+							<div class="mus-mark"><s class="mark-zt">满100减10</s></div>
+						</div>
+						<div class="inner_title inner_title_bes serviceBox">
+							<div class="detail_l">
+								<b class="detailprice-tips">&yen;</b>
+								<h6 class="detailprice_">3200.00</h6>
+							</div>
+							<div class="detail_r">
+								<div class="sfr">
+			    					<div class="reduce" onclick="reduce(this)">
+			    						<i class="iconfont">&#xe622;</i>
+			    					</div>
+			    					<input type="number" class="number" value="1">
+			    					<div class="plus" onclick="plus(this)">
+			    						<i class="iconfont">&#xe650;</i>
+			    					</div>
+			    				</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+		<div class="contentBox contentBoxset mt20">
+			<div class="serviceBox">
+				<h3>填写老人信息</h3>
+			</div>
+			<div class="inner_title inner_title_ses">
+				<div class="jes_box">
+					<div class="inner_r2 message">
+						<div class="shoplist registerBox" id="registerBox01">
+							<ul class="loginConfirm">
+								<li class="list loginConfirm">
+									<div class="form">
+										<ol>
+											<li class="formli">
+												<div class="formlist input border">
+													<input type="text" placeholder="请填写您的姓名" value="" id="user" />
+													<span class="spin"></span>
+												</div>
+											</li>
+											<li class="formli">
+												<div class="formlist input border">
+													<input type="text" id="sex" placeholder="请选择您的性别" readonly="readonly">
+													<span class="spin"></span>
+													<i class="iconfont">&#xe6ac;</i>
+												</div>
+											</li>
+											<li class="formli">
+												<div class="formlist input border">
+													<input type="text" placeholder="请填写您的身份证号" value="" id="cardNo" />
+													<span class="spin"></span>
+												</div>
+											</li>
+											<li class="formli">
+												<div class="formlist input border">
+													<input type="text" id="picker" placeholder="请选择现居住地省市区" readonly="readonly" onclick="citySelect()">
+													<span class="spin"></span>
+													<i class="iconfont">&#xe6ac;</i>
+												</div>
+											</li>
+											<li class="formli">
+												<div class="formlist input border">
+													<input type="text" placeholder="请输入现居住地详细地址" value="" id="record" />
+													<span class="spin"></span>
+												</div>
+											</li>
+										</ol>
+									</div>
+				    			</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contentBox contentBoxset mt20">
+			<div class="serviceBox">
+				<h3>服务内容</h3>
+			</div>
+			<div class="inner_title inner_title_ses">
+				<div class="jes_box">
+					<div class="inner_r2 message">
+						<a><span class="item-bold">提供喂饭、剪指甲、洗衣、压疮等服务。</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contentBox contentBoxset mt20">
+			<div class="serviceBox">
+				<h3>订单备注</h3>
+			</div>
+			<div class="inner_title inner_title_ses">
+				<div class="jes_box">
+					<div class="inner_r2 message">
+						<textarea style="width: 100%;border: .5px solid #F2F2F2;padding: 0.2rem;"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contentBox contentBoxset mt20">
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">优惠券</div>
+				<a class="inner_r2" onclick="openCoupon()">
+					<span class="active_color">6张可用</span>
+					<input type="hidden" id="couponData" value="" />
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">金豆(共1800个)</div>
+				<a class="inner_r2" onclick="openOtayonii()">
+					<span>去选择</span>
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">发票</div>
+				<a class="inner_r2" onclick="openReceipt()">
+					<span>普通(商品明细-个人)</span>
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			<div class="inner_title inner_title_tes">
+				<div class="inner_l">支付方式</div>
+				<a class="inner_r2" href="">
+					<span>在线支付</span>
+				</a>
+				<div class="inner_t2">
+					<i class="iconfont">&#xe613;</i>
+				</div>
+			</div>
+			
+		</div>
+		<div class="s-actionBar">
+			<div class="s-actionBar-info">
+				&yen;1980.00
+			</div>
+	  		<div class="action-bar">
+	  			<div class="trade-bar" onclick="order()">
+	  				提交订单
+	  			</div>
+	  		</div>
+	  	</div>
+	</div>
+	
+	<div class="layerBox" id="layerBox">
+		<div class="mainPerson">
+			<h2>请选择就近服务区域</h2>
+			<div class="areaDialog">
+				<span id="province" onclick="setProvince(this)"></span>
+				<span id="city" onclick="setCity(this)"></span>
+				<span id="district" onclick="setDistrict(this)"></span>
+			</div>
+			<ul class="provinceData" id="provinceData">
+				<li onclick="getProvince(this)">安徽</li>
+			</ul>
+			<ul class="cityData" id="cityData">
+				<li onclick="getCity(this)">安庆</li>
+			</ul>
+			<ul class="districtData" id="districtData">
+				<li onclick="getDistrict(this)">大观区</li>
+			</ul>
+		</div>
+	</div>
+	<div class="layerDialog" id="layerDialog" onclick="closeDialog(this)"></div>
+	
+	<!--优惠券-->
+	<div class="layerBox" id="coupon">
+		<div class="mainPerson counpon_select">
+			<h2>优惠券</h2>
+			<i class="desc-icon iconfont" onclick="closeCouponDialog(this)">&#xe68b;</i>
+		</div>
+		<div class="tab_contain">
+	        <ul class="tab_menu box" id="tab_menu">
+	            <li class="on flex active">可用(3)</li>
+	            <li class="on flex">不可用(5)</li>
+	        </ul>
+	        <div class="tab_box" id="tab_box">
+	            <div class="tab_item">
+	            	<ul class="useableList">
+	            		<li class="coupon_list_item">
+	            			<label class="editBox" onclick="checkbox(this)" data-checked = "false" data-price = "50">
+				    			<i class="iconfont checkIconList">&#xe658;</i>
+		            			<div class="coupon_voucher">
+		            				<span class="coupon_voucher_tag">
+		            					<i>可用</i>
+		            				</span>
+		            				<div class="coupon_voucher_main">
+		            					<div class="coupon_voucher_info">
+		            						<p class="coupon_voucher_info_text">仅可购买适老化设备商品</p> 
+		            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+		                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+		            					</div>
+		            					<div class="coupon_voucher_view">
+		            						<p class="coupon_voucher_view_price">
+		            							<i>&yen;</i>
+		            							<strong>50</strong><br />
+		            							<s>满50元减5</s>
+		            						</p>
+		            					</div>
+		            				</div>
+		            			</div>
+	            			</label>
+	            		</li>
+	            		<li class="coupon_list_item">
+	            			<label class="editBox" onclick="checkbox(this)" data-checked = "false" data-price = "100">
+				    			<i class="iconfont checkIconList">&#xe658;</i>
+		            			<div class="coupon_voucher">
+		            				<span class="coupon_voucher_tag">
+		            					<i>可用</i>
+		            				</span>
+		            				<div class="coupon_voucher_main">
+		            					<div class="coupon_voucher_info">
+		            						<p class="coupon_voucher_info_text">仅可购买健康服务商品</p> 
+		            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+		                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+		            					</div>
+		            					<div class="coupon_voucher_view">
+		            						<p class="coupon_voucher_view_price">
+		            							<i>&yen;</i>
+		            							<strong>100</strong><br />
+		            							<s>满100元减10</s>
+		            						</p>
+		            					</div>
+		            				</div>
+		            			</div>
+	            			</label>
+	            		</li>
+	            		<li class="coupon_list_item">
+	            			<label class="editBox" onclick="checkbox(this)" data-checked = "false" data-price = "200">
+				    			<i class="iconfont checkIconList">&#xe658;</i>
+		            			<div class="coupon_voucher">
+		            				<span class="coupon_voucher_tag">
+		            					<i>可用</i>
+		            				</span>
+		            				<div class="coupon_voucher_main">
+		            					<div class="coupon_voucher_info">
+		            						<p class="coupon_voucher_info_text">仅可购买健康服务商品</p> 
+		            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+		                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+		            					</div>
+		            					<div class="coupon_voucher_view">
+		            						<p class="coupon_voucher_view_price">
+		            							<i>&yen;</i>
+		            							<strong>200</strong><br />
+		            							<s>满200元减20</s>
+		            						</p>
+		            					</div>
+		            				</div>
+		            			</div>
+	            			</label>
+	            		</li>
+	            		<li class="coupon_list_item">
+	            			<label class="editBox" onclick="checkbox(this)" data-checked = "false" data-price = "300">
+				    			<i class="iconfont checkIconList">&#xe658;</i>
+		            			<div class="coupon_voucher">
+		            				<span class="coupon_voucher_tag">
+		            					<i>可用</i>
+		            				</span>
+		            				<div class="coupon_voucher_main">
+		            					<div class="coupon_voucher_info">
+		            						<p class="coupon_voucher_info_text">仅可购买适老化设备商品</p> 
+		            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+		                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+		            					</div>
+		            					<div class="coupon_voucher_view">
+		            						<p class="coupon_voucher_view_price">
+		            							<i>&yen;</i>
+		            							<strong>300</strong><br />
+		            							<s>满300元减40</s>
+		            						</p>
+		            					</div>
+		            				</div>
+		            			</div>
+	            			</label>
+	            		</li>
+	            		<li class="coupon_list_item">
+	            			<label class="editBox" onclick="checkbox(this)" data-checked = "false" data-price = "500">
+				    			<i class="iconfont checkIconList">&#xe658;</i>
+		            			<div class="coupon_voucher">
+		            				<span class="coupon_voucher_tag">
+		            					<i>可用</i>
+		            				</span>
+		            				<div class="coupon_voucher_main">
+		            					<div class="coupon_voucher_info">
+		            						<p class="coupon_voucher_info_text">通用券</p> 
+		            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+		                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+		            					</div>
+		            					<div class="coupon_voucher_view">
+		            						<p class="coupon_voucher_view_price">
+		            							<i>&yen;</i>
+		            							<strong>500</strong><br />
+		            							<s>满500元减60</s>
+		            						</p>
+		            					</div>
+		            				</div>
+		            			</div>
+	            			</label>
+	            		</li>
+	            		<li class="coupon_list_item">
+	            			<label class="editBox" onclick="checkbox(this)" data-checked = "false" data-price = "1000">
+				    			<i class="iconfont checkIconList">&#xe658;</i>
+		            			<div class="coupon_voucher">
+		            				<span class="coupon_voucher_tag">
+		            					<i>可用</i>
+		            				</span>
+		            				<div class="coupon_voucher_main">
+		            					<div class="coupon_voucher_info">
+		            						<p class="coupon_voucher_info_text">仅可购买健康服务商品</p> 
+		            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+		                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+		            					</div>
+		            					<div class="coupon_voucher_view">
+		            						<p class="coupon_voucher_view_price">
+		            							<i>&yen;</i>
+		            							<strong>1000</strong><br />
+		            							<s>满1000元减100</s>
+		            						</p>
+		            					</div>
+		            				</div>
+		            			</div>
+	            			</label>
+	            		</li>
+	            	</ul>
+	            	<div class="pic_order_box" id="couponDatasure">
+	            		<div class="pic_order_btn" onclick="openCouponBox(this)">确定</div>
+	            	</div>
+	            	<!--数据为空时-->
+	            	<div class="no_coupon">
+	            		<p><i class="iconfont">&#xe62d;</i></p>
+	            		<p>暂无优惠券</p>
+	            	</div>
+	            </div>
+	            <div class="tab_item hide">
+	            	<ul class="useableList">
+	            		<li class="coupon_list_item">
+	            			<div class="coupon_voucher type_disabled">
+	            				<span class="coupon_voucher_tag color_gray">
+	            					<i>不可用</i>
+	            				</span>
+	            				<div class="coupon_voucher_main">
+	            					<div class="coupon_voucher_info">
+	            						<p class="coupon_voucher_info_text">仅可购买适老化设备商品</p> 
+	            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+	                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+	            					</div>
+	            					<div class="coupon_voucher_view color_gray">
+	            						<p class="coupon_voucher_view_price">
+	            							<i>&yen;</i>
+	            							<strong>50</strong><br />
+	            							<s>满50元减5</s>
+	            						</p>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</li>
+	            		<li class="coupon_list_item">
+	            			<div class="coupon_voucher type_disabled">
+	            				<span class="coupon_voucher_tag color_gray">
+	            					<i>不可用</i>
+	            				</span>
+	            				<div class="coupon_voucher_main">
+	            					<div class="coupon_voucher_info">
+	            						<p class="coupon_voucher_info_text">仅可购买适老化设备商品</p> 
+	            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+	                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+	            					</div>
+	            					<div class="coupon_voucher_view color_gray">
+	            						<p class="coupon_voucher_view_price">
+	            							<i>&yen;</i>
+	            							<strong>50</strong><br />
+	            							<s>满50元减5</s>
+	            						</p>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</li>
+	            		<li class="coupon_list_item">
+	            			<div class="coupon_voucher type_disabled">
+	            				<span class="coupon_voucher_tag color_gray">
+	            					<i>不可用</i>
+	            				</span>
+	            				<div class="coupon_voucher_main">
+	            					<div class="coupon_voucher_info">
+	            						<p class="coupon_voucher_info_text">仅可购买适老化设备商品</p> 
+	            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+	                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+	            					</div>
+	            					<div class="coupon_voucher_view color_gray">
+	            						<p class="coupon_voucher_view_price">
+	            							<i>&yen;</i>
+	            							<strong>50</strong><br />
+	            							<s>满50元减5</s>
+	            						</p>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</li>
+	            		<li class="coupon_list_item">
+	            			<div class="coupon_voucher type_disabled">
+	            				<span class="coupon_voucher_tag color_gray">
+	            					<i>不可用</i>
+	            				</span>
+	            				<div class="coupon_voucher_main">
+	            					<div class="coupon_voucher_info">
+	            						<p class="coupon_voucher_info_text">仅可购买适老化设备商品</p> 
+	            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+	                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+	            					</div>
+	            					<div class="coupon_voucher_view color_gray">
+	            						<p class="coupon_voucher_view_price">
+	            							<i>&yen;</i>
+	            							<strong>50</strong><br />
+	            							<s>满50元减5</s>
+	            						</p>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</li>
+	            		<li class="coupon_list_item">
+	            			<div class="coupon_voucher type_disabled">
+	            				<span class="coupon_voucher_tag color_gray">
+	            					<i>不可用</i>
+	            				</span>
+	            				<div class="coupon_voucher_main">
+	            					<div class="coupon_voucher_info">
+	            						<p class="coupon_voucher_info_text">仅可购买适老化设备商品</p> 
+	            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+	                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+	            					</div>
+	            					<div class="coupon_voucher_view color_gray">
+	            						<p class="coupon_voucher_view_price">
+	            							<i>&yen;</i>
+	            							<strong>50</strong><br />
+	            							<s>满50元减5</s>
+	            						</p>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</li>
+	            		<li class="coupon_list_item">
+	            			<div class="coupon_voucher type_disabled">
+	            				<span class="coupon_voucher_tag color_gray">
+	            					<i>不可用</i>
+	            				</span>
+	            				<div class="coupon_voucher_main">
+	            					<div class="coupon_voucher_info">
+	            						<p class="coupon_voucher_info_text">仅可购买适老化设备商品</p> 
+	            						<p class="coupon_voucher_info_texts">券编号：297163238213</p> 
+	                        			<p class="coupon_voucher_info_date">有效日期至 2018.11.16</p>
+	            					</div>
+	            					<div class="coupon_voucher_view color_gray">
+	            						<p class="coupon_voucher_view_price">
+	            							<i>&yen;</i>
+	            							<strong>50</strong><br />
+	            							<s>满50元减5</s>
+	            						</p>
+	            					</div>
+	            				</div>
+	            			</div>
+	            		</li>
+	            	</ul>
+	            </div>
+	            
+	        </div>
+	    </div>
+	</div>
+	<div class="layerDialog" id="couponDialog" onclick="closeCouponDialog(this)"></div>
+	
+	
+	<!--金豆-->
+	<div class="layerBox" id="otayonii">
+		<div class="mainPerson counpon_select">
+			<h2>金豆<span>（剩余：1800）</span></h2>
+			<i class="desc-icon iconfont" onclick="closeOtayoniiDialog(this)">&#xe68b;</i>
+		</div>
+		<ul class="useableList">
+    		<li class="coupon_list_item">
+    			<label class="editBox" onclick="checkboxGold(this)" data-checked = "false" data-price = "50">
+	    			<i class="iconfont checkIconList">&#xe658;</i>
+        			<div class="coupon_voucher_s">
+        				
+        				<div class="coupon_voucher_main">
+        					<div class="coupon_voucher_info_s">
+        						<p class="coupon_voucher_info_texts">暂不使用金豆</p>
+        					</div>
+        				</div>
+        			</div>
+    			</label>
+    		</li>
+    		<li class="coupon_list_item">
+    			<label class="editBox" onclick="checkboxGold(this)" data-checked = "false" data-price = "50">
+	    			<i class="iconfont checkIconList">&#xe658;</i>
+        			<div class="coupon_voucher_s">
+        				
+        				<div class="coupon_voucher_main">
+        					<div class="coupon_voucher_info_s">
+        						<p class="coupon_voucher_info_texts">抵扣<span class="voucher_span">&yen;10.00</span>最高可使用1000金豆</p>
+        					</div>
+        				</div>
+        			</div>
+    			</label>
+    		</li>
+    		<li class="coupon_list_item">
+    			<label class="editBox" onclick="checkboxGold(this)" data-checked = "false" data-price = "50">
+	    			<i class="iconfont checkIconList">&#xe658;</i>
+        			<div class="coupon_voucher_s">
+        				
+        				<div class="coupon_voucher_main">
+        					<div class="coupon_voucher_info_s">
+        						<p class="coupon_voucher_info_texts">抵扣<span class="voucher_span">&yen;18.00</span>最高可使用1800金豆</p>
+        					</div>
+        				</div>
+        			</div>
+    			</label>
+    		</li>
+    		<li class="coupon_list_item">
+    			<label class="editBox" onclick="checkboxGold(this)" data-checked = "false" data-price = "50">
+	    			<i class="iconfont checkIconList">&#xe658;</i>
+        			<div class="coupon_voucher_s">
+        				
+        				<div class="coupon_voucher_main">
+        					<div class="coupon_voucher_info_s">
+        						<p class="coupon_voucher_info_texts">自定义使用金豆数量</p>
+        					</div>
+        				</div>
+        			</div>
+    			</label>
+    			<div class="goldBox">
+    				<span>使用</span>
+    				<input type="number" value="1" />
+    				<span>金豆，抵<b class="voucher_span">&yen;0.01</b></span>
+    			</div>
+    		</li>
+    	</ul>
+    	<div class="pic_order_box" id="otayoniiDatasure">
+    		<div class="pic_order_btn" onclick="openOtayonii()">确定</div>
+    	</div>
+	</div>
+	<div class="layerDialog" id="otayoniiDialog" onclick="closeOtayoniiDialog(this)"></div>
+	
+	
+	<!--发票-->
+	<div class="layerBox" id="receipt">
+		<div class="mainPerson counpon_select">
+			<h2>开具发票</h2>
+			<i class="desc-icon iconfont" onclick="closeReceiptDialog(this)">&#xe68b;</i>
+		</div>
+		<div class="tab_contain">
+	        <ul class="tab_menu box" id="receipt_menu">
+	            <li class="on flex active">电子普通发票</li>
+	            <li class="on flex">不开发票</li>
+	        </ul>
+	        <div class="tab_box" id="receipt_tab">
+	            <div class="tab_item useableList">
+	            	<div class="receipt">
+	            		<div class="receipt_title">发票抬头</div>
+	            		<div class="receipt_up" id="receipt_kind">
+	            			<div class="receipt_kind select">个人/事业单位</div>
+	            			<div class="receipt_kind">企业</div>
+	            		</div>
+	            		<div class="receipt_down" id="receipt_info">
+	            			<div class="receipt_item">
+	            				<div class="contentBox contentBoxget mt20">
+									<div class="inner_title inner_title_ges">
+										<div class="jes_box">
+											<div class="inner_r2 message">
+												<div class="shoplist registerBox" id="registerBox01">
+													<ul class="loginConfirm">
+														<li class="list loginConfirm">
+															<div class="form">
+																<ol>
+																	<li class="formli">
+																		<div class="formlist input border">
+																			<input type="text" placeholder="请填写个人名称" value="" id="" />
+																			<span class="spin"></span>
+																		</div>
+																	</li>
+																	<li class="formli">
+																		<div class="formlist input border">
+																			<input type="text" placeholder="请填写邮箱" value="" id="" />
+																			<span class="spin"></span>
+																		</div>
+																	</li>
+																</ol>
+															</div>
+										    			</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+	            			</div>
+	            			<div class="receipt_item hide">
+	            				<div class="contentBox contentBoxget mt20">
+									<div class="inner_title inner_title_ges">
+										<div class="jes_box">
+											<div class="inner_r2 message">
+												<div class="shoplist registerBox">
+													<ul class="loginConfirm">
+														<li class="list loginConfirm">
+															<div class="form">
+																<ol>
+																	<li class="formli">
+																		<div class="formlist input border">
+																			<input type="text" placeholder="请填写企业名称" value="" id="" />
+																			<span class="spin"></span>
+																		</div>
+																	</li>
+																	<li class="formli">
+																		<div class="formlist input border">
+																			<input type="text" placeholder="请填写纳税人识别号" value="" id="" />
+																			<span class="spin"></span>
+																		</div>
+																	</li>
+																	<li class="formli">
+																		<div class="formlist input border">
+																			<input type="text" placeholder="请填写邮箱" value="" id="" />
+																			<span class="spin"></span>
+																		</div>
+																	</li>
+																</ol>
+																<ol class="hide" id="regsor">
+																	<li class="formli">
+																		<div class="formlist input border">
+																			<input type="text" placeholder="请填写注册地址" value="" id="" />
+																			<span class="spin"></span>
+																		</div>
+																	</li>
+																	<li class="formli">
+																		<div class="formlist input border">
+																			<input type="text" placeholder="请填写注册电话" value="" id="" />
+																			<span class="spin"></span>
+																		</div>
+																	</li>
+																	<li class="formli">
+																		<div class="formlist input border">
+																			<input type="text" placeholder="请填写单位开户银行" value="" id="" />
+																			<span class="spin"></span>
+																		</div>
+																	</li>
+																	<li class="formli">
+																		<div class="formlist input border">
+																			<input type="text" placeholder="请填写单位银行账号" value="" id="" />
+																			<span class="spin"></span>
+																		</div>
+																	</li>
+																</ol>
+																<ol>
+																	<li class="formli">
+																		<div class="moreBtn" onclick="openRegsor(this)">
+																			更多选填项
+																		</div>
+																	</li>
+																</ol>
+															</div>
+										    			</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="pic_order_box" id="receiptDatasure">
+	            		<div class="pic_order_btn" onclick="openReceiptBox(this)">确定</div>
+	            	</div>
+	            </div>
+	            <div class="tab_item hide">
+	            	<div class="pic_order_box" id="receiptDatasure2" style="display: block;">
+	            		<div class="pic_order_btn" onclick="openReceiptBox(this)">确定</div>
+	            	</div>
+	            </div>
+	            
+	        </div>
+	    </div>
+	</div>
+	<div class="layerDialog" id="receiptDialog" onclick="closeReceiptDialog(this)"></div>
+	
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-weui.min.js" ></script>
+	<script type="text/javascript" src="js/mobileSelect.js" ></script>
+	<script type="text/javascript" src="js/layer_mobile/layer.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		$(".loginConfirm .input input").each(function(){
+			$(this).focus(function(){
+				$(this).siblings().addClass('animation');
+			})
+			$(this).blur(function(){
+				$(this).siblings().removeClass('animation');
+			})
+		})
+		
+		const recordSelect = new MobileSelect({
+		    trigger: '#sex',
+		    title: '选择性别',
+		    wheels: [
+	                {data:[
+	                    "男", "女"
+	                ]}
+	        ],
+		    transitionEnd:function(indexArr, data){
+		        console.log(data);
+		    },
+		    callback:function(indexArr, data){
+		        console.log(data);
+		        $("#sex").val(data[0]);
+		    }  
+		});
+		
+		const citySelect = () => {
+			openDialog();
+		};
+		
+		const closeDialog = () => {
+			$("#layerDialog").fadeOut();
+			$("#layerBox").removeClass('layerTop');
+		};
+		
+		const openDialog = () => {
+			setTimeout(() => {
+				$("#layerDialog").fadeIn();
+			}, 500)
+			$("#layerBox").addClass('layerTop');
+		};
+		
+		const uoloadIdentity = () => {
+			openDialog();
+		};
+		
+		const reduce = (obj) => {
+			let value = $(obj).next().val();
+			value--;
+			if (value > 0) {
+				$(obj).next().val(value);
+			} else {
+				$(obj).next().val(1);
+			}
+			
+		}
+		
+		const plus = (obj) => {
+			let value = $(obj).prev().val();
+			value++;
+			$(obj).prev().val(value);
+		}
+		
+		var provinceText = '';
+		var cityText = '';
+		var districtText = '';
+		
+		//省
+		const getProvince = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');	
+			$(obj).hide();
+			provinceText = $(obj).text();
+			$("#province").text($(obj).text());
+			$("#city").text("请选择");
+			$("#district").text("");
+			$("#cityData").show();
+			$(".areaDialog").show();
+		};
+		
+		//市
+		const getCity = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');	
+			$(obj).hide();
+			cityText = $(obj).text();
+			$("#city").text($(obj).text());
+			$("#district").text("请选择");
+			$("#districtData").show();
+			$(".areaDialog").show();
+		};
+		
+		//区
+		const getDistrict = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');
+			districtText = $(obj).text();
+			$("#district").text($(obj).text());
+			setareaData();
+		};
+		
+		const setareaData = () => {
+			$("#picker").val(provinceText + cityText + districtText);
+			closeDialog();
+		};
+		
+		const setCity = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');
+			$("#cityData").show();
+			$("#cityData").children().show();
+			$("#districtData").hide();
+			$("#provinceData").hide();
+		};
+		
+		const setProvince = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');
+			$("#provinceData").show();
+			$("#provinceData").children().show();
+			$("#cityData").hide();
+			$("#districtData").hide();
+		};
+		
+		const setDistrict = (obj) => {
+			$(obj).addClass('active').siblings().removeClass('active');
+			$("#districtData").show();
+			$("#districtData").children().show();
+			$("#provinceData").hide();
+			$("#cityData").hide();
+		};
+		
+		const order = () => {
+			layer.open({
+				shadeClose: false, //禁止遮罩关闭
+				title: "您确认购买服务吗？",
+				content:'<p style="font-size: 0.28rem;text-align: center;"> 支付成功后，护理员会联系您预约上门评估时间。</p>',
+				btn:['确认','取消'],
+				no:function(){//取消
+					
+				},
+				yes: function(index, layero){//确认
+	                layer.close(index); //如果设定了yes回调，需进行手工关闭	
+	                window.location.href = 'pay.html'
+				}
+			})
+		}
+	</script>
+	<script>
+		//优惠券
+		const openCoupon = () => {
+			setTimeout(() => {
+				$("#couponDialog").fadeIn();
+				$("#couponDatasure").show();
+			}, 500)
+			$("#coupon").addClass('layerTop');
+			ModalHelper.afterOpen();
+		}
+		
+		const closeCouponDialog = () => {
+			closeCoupon();
+		}
+		
+		const closeCoupon = () => {
+			$("#couponDialog").fadeOut();
+			$("#coupon").removeClass('layerTop');
+			$("#couponDatasure").hide();
+			ModalHelper.beforeClose();
+		}
+		
+		$("#tab_menu li").click(function(){
+	 		$(this).addClass("active").siblings().removeClass("active");
+			var index=$(this).index(); 
+	 		$("#tab_box .tab_item").eq(index).show().siblings().hide();
+		});
+		
+		const openCouponBox = (obj) => {
+			closeCoupon();
+			let couponData = $("#couponData").val();
+			if (couponData == "") {
+				$("#couponData").prev().text("6张可用");
+			} else{
+				$("#couponData").prev().text(couponData);
+			}
+			
+		}
+		
+		const checkbox = (obj) => {
+			if ($(obj).data('checked') == true) {
+				$(obj).data("checked", false);
+			 	$(obj).children('i').html("&#xe658;");
+			 	$("#couponData").val("");
+		   	}else{
+			 	$(obj).data("checked", true);
+				$(obj).children('i').html("&#xe654;");
+				$("#couponData").val("-￥" + Number($(obj).data("price")).toFixed(2))
+		   	}
+		   	
+		   	$(obj).parent().siblings().children("label").data("checked", false);
+			$(obj).parent().siblings().children("label").children('i').html("&#xe658;");
+			
+		}
+		
+		//金豆
+		const openOtayonii = () => {
+			setTimeout(() => {
+				$("#otayoniiDialog").fadeIn();
+				$("#otayoniiDatasure").show();
+			}, 500)
+			$("#otayonii").addClass('layerTop');
+			ModalHelper.afterOpen();
+		}
+		
+		const closeOtayoniiDialog = () => {
+			closeOtayonii();
+		}
+		
+		const closeOtayonii = () => {
+			$("#otayoniiDialog").fadeOut();
+			$("#otayonii").removeClass('layerTop');
+			$("#otayoniiDatasure").hide();
+			ModalHelper.beforeClose();
+		}
+		
+		const checkboxGold = (obj) => {
+		   	$(obj).data("checked", true);
+			$(obj).children('i').html("&#xe654;");
+		   	$(obj).parent().siblings().children("label").data("checked", false);
+			$(obj).parent().siblings().children("label").children('i').html("&#xe658;");
+			
+		}
+		
+		
+		//发票
+		const openReceipt = () => {
+			setTimeout(() => {
+				$("#receiptDialog").fadeIn();
+				$("#receiptDatasure").show();
+			}, 500)
+			$("#receipt").addClass('layerTop');
+			ModalHelper.afterOpen();
+		}
+		
+		const closeReceiptDialog = () => {
+			closeReceipt();
+		}
+		
+		const closeReceipt = () => {
+			$("#receiptDialog").fadeOut();
+			$("#receipt").removeClass('layerTop');
+			$("#receiptDatasure").hide();
+			ModalHelper.beforeClose();
+		}
+		
+		const openReceiptBox = () => {
+			closeReceipt();
+		}
+		
+		
+		$("#receipt_menu li").click(function(){
+	 		$(this).addClass("active").siblings().removeClass("active");
+			var index=$(this).index(); 
+	 		$("#receipt_tab .tab_item").eq(index).show().siblings().hide();
+		});
+		
+		$("#receipt_kind .receipt_kind").click(function(){
+	 		$(this).addClass("select").siblings().removeClass("select");
+			var index=$(this).index(); 
+	 		$("#receipt_info .receipt_item").eq(index).show().siblings().hide();
+		});
+		
+		const openRegsor = (obj) => {
+			$("#regsor").toggleClass('hide');
+			if ($("#regsor").hasClass('hide')) {
+				$(obj).text("更多选填项");
+			} else{
+				$(obj).text("收起选填项");
+			}
+		}
+	</script>
+</body>
+</html>

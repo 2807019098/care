@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="">
+	<link rel="icon" type="image/jpg" href="">
+    <link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/base.css" />
+
+</head>
+<body>
+	<div class="container itemBanner">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>支付成功</h2>
+    		</div>
+		</header>
+		<div class="contentBox contentBoxset mt20">
+			<div class="serviceBox-payok">
+				<i class="iconfont">&#xe637;</i>
+				<h3>恭喜您订单支付成功！</h3>
+				<h4>护理员会尽快联系您，请您耐心等待。</h4>
+			</div>
+		</div>
+		<div class="s-actionBar-d">
+	  		<a class="s-actionBar-btn" href="index.html">去 购 物</a>
+	  	</div>
+	</div>
+	
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-weui.min.js" ></script>
+	<script type="text/javascript" src="js/mobileSelect.js" ></script>
+	<script type="text/javascript" src="js/layer_mobile/layer.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		
+		const checkboxGold = (obj) => {
+		   	$(obj).data("checked", true);
+			$(obj).children('i').html("&#xe654;");
+		   	$(obj).parent().siblings().children("label").data("checked", false);
+			$(obj).parent().siblings().children("label").children('i').html("&#xe658;");
+			
+		}
+		
+	</script>
+</body>
+</html>

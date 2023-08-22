@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="">
+	<link rel="icon" type="image/jpg" href="">
+    <link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/base.css" />
+
+</head>
+<body>
+	<div class="container scroll">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>通知管理</h2>
+    		</div>
+		</header>
+		<div class="contentBox contentBoxset mt20">
+			<div class="inner_title inner_title_tes">
+				<div class="inner_r2 message">
+					<span>消息免打扰</span>
+				</div>
+				<div class="inner_t2 message">
+					<div class="lcs_wrap">
+						<input type="checkbox" class="lcs_check" name="dept" value="10" autocomplete="off">
+						<div class="lcs_switch  lcs_checkbox_switch lcs_off">
+							<div class="lcs_cursor"></div>
+							<div class="lcs_label lcs_label_on"></div>
+							<div class="lcs_label lcs_label_off"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="padding: 0 0.2rem;font-size: 0.2rem;color: #999999;">已开启免打扰开关，你将不再收到该账号的任何通知</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/switch.min.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		$('.lcs_check').lc_switch();
+	    $('.lcs_wrap').click(function(){
+	    	if($(this).children('.lcs_switch').hasClass('lcs_off')){
+	    		$(this).children('.lcs_switch').removeClass('lcs_on')
+	    		$(this).children('.lcs_switch').addClass('lcs_off')
+	    	}
+	    	else{ 		
+	    		$(this).children('.lcs_switch').removeClass('lcs_off')
+	    		$(this).children('.lcs_switch').addClass('lcs_on')
+	    	}
+	    })
+	</script>
+</body>
+</html>

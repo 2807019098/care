@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="">
+	<link rel="icon" type="image/jpg" href="">
+    <link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/base.css" />
+
+</head>
+<body>
+	<div class="container itemBanner">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>付款</h2>
+    		</div>
+		</header>
+		<div class="contentBox contentBoxset mt20">
+			
+			<div class="serviceBox-pay">
+				<div class="serviceBox-pay-time">
+					<strong id="hour_show">0时</strong>
+				    <strong id="minute_show">0分</strong>
+				    <strong id="second_show">0秒</strong>
+				</div>
+				<div class="serviceBox-pay-item">
+					<b>&yen;</b><h3>41.00</h3>
+				</div>
+				
+			</div>
+		</div>
+		<div class="contentBox contentBoxlet mt20">
+			<div class="serviceBox-s">
+				<h3>支付方式</h3>
+			</div>
+			<div class="inner_title inner_title_les">
+				<ul class="useableList jq33">
+		    		<li class="coupon_list_item">
+		    			<label class="editBox" onclick="checkboxGold(this)" data-checked = "true" data-price = "wx">			    			
+		        			<div class="coupon_voucher_s">
+		        				<div class="coupon_voucher_main">
+		        					<div class="coupon_voucher_info_s">
+		        						<div class="coupon_voucher_info_texts">
+		        							<img src="images/wechat_pay.png" />微信支付
+		        						</div>
+		        					</div>
+		        				</div>
+		        			</div>
+		        			<i class="iconfont checkIconList">&#xe654;</i>
+		    			</label>
+		    		</li>
+		    		<li class="coupon_list_item">
+		    			<label class="editBox" onclick="checkboxGold(this)" data-checked = "false" data-price = "yl">
+		        			<div class="coupon_voucher_s">
+		        				<div class="coupon_voucher_main">
+		        					<div class="coupon_voucher_info_s">
+		        						<div class="coupon_voucher_info_texts">
+		        							<img src="images/yinlian.png" />银联
+		        						</div>
+		        					</div>
+		        				</div>
+		        			</div>
+			    			<i class="iconfont checkIconList">&#xe658;</i>
+		    			</label>
+		    		</li>
+		    		<li class="coupon_list_item">
+		    			<label class="editBox" onclick="checkboxGold(this)" data-checked = "false" data-price = "zfb">
+		        			<div class="coupon_voucher_s">
+		        				<div class="coupon_voucher_main">
+		        					<div class="coupon_voucher_info_s">
+		        						<div class="coupon_voucher_info_texts">
+		        							<img src="images/zfb.png" />支付宝
+		        						</div>
+		        					</div>
+		        				</div>
+		        			</div>
+			    			<i class="iconfont checkIconList">&#xe658;</i>
+		    			</label>
+		    		</li>
+		    	</ul>
+			</div>
+		</div>
+		
+		<div class="s-actionBar-s">
+	  		<div class="s-actionBar-btn" onclick="pay()">去 付 款</div>
+	  	</div>
+	</div>
+	
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-weui.min.js" ></script>
+	<script type="text/javascript" src="js/mobileSelect.js" ></script>
+	<script type="text/javascript" src="js/layer_mobile/layer.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		
+		const checkboxGold = (obj) => {
+		   	$(obj).data("checked", true);
+			$(obj).children('i').html("&#xe654;");
+		   	$(obj).parent().siblings().children("label").data("checked", false);
+			$(obj).parent().siblings().children("label").children('i').html("&#xe658;");
+			
+		}
+		
+		const pay = () => {
+			loading(true, 'transparent', '#E61F19');
+			setTimeout(() => {
+				$.toast("支付成功", "text");
+				window.location.href = 'paysuccess.html';
+			}, 2000)
+		}
+		
+		var intDiff = parseInt(60*60*24); //倒计时总秒数量
+		function timer(intDiff) {
+		    window.setInterval(function() {
+		        var day = 0,
+		            hour = 0,
+		            minute = 0,
+		            second = 0; //时间默认值
+		        if (intDiff > 0) {
+		            day = Math.floor(intDiff / (60 * 60 * 24));
+		            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+		            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+		            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+		        }
+		        if (minute <= 9) minute = '0' + minute;
+		        if (second <= 9) second = '0' + second;
+		        $('#hour_show').html('<s id="h"></s>' + hour + '时');
+		        $('#minute_show').html('<s></s>' + minute + '分');
+		        $('#second_show').html('<s></s>' + second + '秒');
+		        intDiff--;
+		    }, 1000);
+		}
+		$(function() {
+		    timer(intDiff);
+		});
+
+		
+	</script>
+</body>
+</html>

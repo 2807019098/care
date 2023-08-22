@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="images/Logo.png">
+	<link rel="icon" type="image/jpg" href="images/Logo.png">
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div class="container loginBox">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>家属设置</h2>
+    			<i class="tipsIcon"></i>
+    		</div>
+		</header>
+		<form class="form mt20" autocomplete="off" name="form" action="" method="get">
+			<div class="shoplist registerBox registerBox01" id="registerBox01">
+				<ul class="loginBox" style="margin-bottom: 0.2rem;">
+					<li class="list loginBox">
+						<div class="form">
+							<ol>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="请输入您的姓名" value="" id="user" />
+										<span class="spin"></span>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="number" maxlength="11" placeholder="请输入您的手机号" value="" id="phone" />
+										<span class="spin"></span>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="number" placeholder="请输入短信验证码" value="" id="sms" />
+										<input type="button" value="获取验证码" id="SendCode" onclick="checkSms()" />
+										<span class="spin"></span>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="请选择您的性别" value="" id="sex" readonly="readonly" />
+										<span class="spin"></span>
+										<i class="iconfont">&#xe6ac;</i>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="请选择您的家属关系" value="" id="family" readonly="readonly" />
+										<span class="spin"></span>
+										<i class="iconfont">&#xe6ac;</i>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="是否接受信息" value="" id="isMessage" readonly="readonly" />
+										<span class="spin"></span>
+										<i class="iconfont">&#xe6ac;</i>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="是否同住" value="" id="live" readonly="readonly" />
+										<span class="spin"></span>
+										<i class="iconfont">&#xe6ac;</i>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist input border">
+										<input type="text" placeholder="请输入居住详细地址" value="" id="area" />
+										<span class="spin"></span>
+									</div>
+								</li>
+								<li class="formli">
+									<div class="formlist">
+										<button class="formli_btn" type="button" onclick="submitData()">保 存</button>
+									</div>
+								</li>
+							</ol>
+						</div>
+	    			</li>
+				</ul>
+			</div>
+			
+		</form>
+	</div>
+	
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-weui.min.js" ></script>
+	<script type="text/javascript" src="js/mobileSelect.js" ></script>
+	<script type="text/javascript" src="js/jquery.fireworks.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		
+		$(".loginBox .input input").each(function(){
+			$(this).focus(function(){
+				$(this).siblings().addClass('animation');
+			})
+			$(this).blur(function(){
+				$(this).siblings().removeClass('animation');
+			})
+		})
+		const submitData = () => {
+			
+			let user = $("#user").val();
+			var phone = $("#phone").val();
+			var phonereg = /^(((13[0-9]{1})|(15[0-9]{1})|(16[6]{1})|(17[0-9]{1})|(18[0-9]{1})|(19[8-9]{1}))+\d{8})$/;
+			var sms = $("#sms").val();
+			let sex = $("#sex").val();
+			let family = $("#family").val();
+			let isMessage = $("#isMessage").val();
+			let live = $("#live").val();
+    		let area = $("#area").val();
+
+			if (user == ""){
+				$.toast("请输入您的姓名", "text");
+				form.user.focus();
+			} else if (phone == ""){
+				$.toast("请输入您的手机号", "text");
+				form.phone.focus();
+			} else if (!phonereg.test(phone)){
+				$.toast("请填写正确的手机号码", "text");
+				form.phone.focus();
+			} else if (sms == ""){
+				$.toast("请输入短信验证码", "text");
+				form.sms.focus();
+			} else if (sex == ""){
+				$.toast("请选择您的性别", "text");
+				form.sex.focus();
+			} else if (family == ""){
+				$.toast("请选择您的家属关系", "text");
+				form.family.focus();
+			} else if (isMessage == ""){
+				$.toast("是否接受信息", "text");
+				form.isMessage.focus();
+			} else if (live == ""){
+				$.toast("是否同住", "text");
+				form.live.focus();
+			} else if (area == ""){
+				$.toast("请输入居住详细地址", "text");
+				form.area.focus();
+			} else {
+				$.toast("设置成功", "text");
+				window.history.go(-1);
+			}
+		};
+		
+		const sexSelect = new MobileSelect({
+		    trigger: '#sex',
+		    title: '选择性别',
+		    wheels: [
+	                {data:[
+	                    "男", "女"
+	                ]}
+	        ],
+		    transitionEnd:function(indexArr, data){
+		        console.log(data);
+		    },
+		    callback:function(indexArr, data){
+		        console.log(data);
+		        $("#sex").val(data[0]);
+		    }  
+		});
+		
+		const familySelect = new MobileSelect({
+		    trigger: '#family',
+		    title: '选择家属关系',
+		    wheels: [
+	                {data:[
+	                    "夫妻", "父母", "子女", "兄弟", "姊妹", "祖父母", "外祖父母", "孙子女", "外孙子女", "儿媳", "公婆", "女婿", "岳父母"
+	                ]}
+	        ],
+		    transitionEnd:function(indexArr, data){
+		        console.log(data);
+		    },
+		    callback:function(indexArr, data){
+		        console.log(data);
+		        $("#family").val(data[0]);
+		    }  
+		});
+		
+		const isMessageSelect = new MobileSelect({
+		    trigger: '#isMessage',
+		    title: '是否接受信息',
+		    wheels: [
+	                {data:[
+	                    "是", "否"
+	                ]}
+	        ],
+		    transitionEnd:function(indexArr, data){
+		        console.log(data);
+		    },
+		    callback:function(indexArr, data){
+		        console.log(data);
+		        $("#isMessage").val(data[0]);
+		    }  
+		});
+		
+		const liveSelect = new MobileSelect({
+		    trigger: '#live',
+		    title: '是否同住',
+		    wheels: [
+	                {data:[
+	                    "是", "否"
+	                ]}
+	        ],
+		    transitionEnd:function(indexArr, data){
+		        console.log(data);
+		    },
+		    callback:function(indexArr, data){
+		        console.log(data);
+		        $("#live").val(data[0]);
+		    }  
+		});
+		
+		const checkSms = () => {
+			var phone = $("#phone").val();
+			var phonereg = /^(((13[0-9]{1})|(15[0-9]{1})|(16[6]{1})|(17[0-9]{1})|(18[0-9]{1})|(19[8-9]{1}))+\d{8})$/;
+			
+			if (phone == ""){
+				$.toast("请输入您的手机号", "text");
+				form.phone.focus();
+			} else if (!phonereg.test(phone)){
+				$.toast("请填写正确的手机号码", "text");
+				form.phone.focus();
+			} else {
+				SendInfo()
+			}
+		}
+		
+		//短信验证码
+
+		var $InterValObj; //timer变量，控制时间
+		var $count = 60; //间隔函数，1秒执行
+		var $curCount;//当前剩余秒数
+		var $code = ""; //验证码
+		var $codeLength = 6;//验证码长度
+		const SendInfo = () => {
+			$curCount = $count;
+			//产生验证码
+			for (var i = 0; i < $codeLength; i++) {
+				$code += parseInt(Math.random() * 9).toString();
+			}
+			//设置button效果，开始计时
+			$("#SendCode").attr("disabled",true);
+			$("#SendCode").val( + $curCount + "秒后再获取");
+			$InterValObj = window.setInterval(SetResetTime, 1000); //启动计时器，1秒执行一次
+		}
+		
+		//timer处理函数
+		const SetResetTime = () => {
+			if ($curCount == 0) {                
+				window.clearInterval($InterValObj);//停止计时器
+				$("#SendCode").removeAttr("disabled");//启用按钮
+				$("#SendCode").val("获取验证码");
+				$code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效    
+			}else {
+				$curCount--;
+				$("#SendCode").val( + $curCount + "秒后再获取");
+			}
+		}
+		
+	</script>
+</body>
+</html>

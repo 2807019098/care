@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="">
+	<link rel="icon" type="image/jpg" href="">
+    <link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/base.css" />
+
+</head>
+<body>
+	<div class="container scroll">
+		<header class="headerUser">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>注销账户</h2>
+    		</div>
+		</header>
+		<h2 class="mt20" style="font-weight: bold;font-size: 0.32rem;padding: 0 0.2rem;">请选择注销原因</h2>
+		<div class="contentBox contentBoxset" style="padding: 0.2rem;">
+			<div onclick="chooseCheck(this, 0)" class="inner_title " style="display: flex;align-items: center;border: 0;">
+				<i class="iconfont" style="margin-right: 0.1rem;font-size: 0.36rem;color: #C5C5C5;">&#xe741;</i>
+				<div class="inner_l">已弃用该手机号</div>
+			</div>
+			<div onclick="chooseCheck(this, 1)" class="inner_title " style="display: flex;align-items: center;border: 0;">
+				<i class="iconfont" style="margin-right: 0.1rem;font-size: 0.36rem;color: #C5C5C5;">&#xe741;</i>
+				<div class="inner_l">存在两个以上会员账户</div>
+			</div>
+			<div onclick="chooseCheck(this, 2)" class="inner_title " style="display: flex;align-items: center;border: 0;">
+				<i class="iconfont" style="margin-right: 0.1rem;font-size: 0.36rem;color: #C5C5C5;">&#xe741;</i>
+				<div class="inner_l">营销短信骚扰</div>
+			</div>
+			<div onclick="chooseCheck(this, 3)" class="inner_title " style="display: flex;align-items: center;border: 0;">
+				<i class="iconfont" style="margin-right: 0.1rem;font-size: 0.36rem;color: #C5C5C5;">&#xe741;</i>
+				<div class="inner_l">安全/隐私顾虑</div>
+			</div>
+			<div onclick="chooseCheck(this, 4)" class="inner_title " style="display: flex;align-items: center;border: 0;">
+				<i class="iconfont" style="margin-right: 0.1rem;font-size: 0.36rem;color: #C5C5C5;">&#xe741;</i>
+				<div class="inner_l">购物体验不佳</div>
+			</div>
+			<div onclick="chooseCheck(this, 5)" class="inner_title " style="display: flex;align-items: center;border: 0;">
+				<i class="iconfont" style="margin-right: 0.1rem;font-size: 0.36rem;color: #C5C5C5;">&#xe741;</i>
+				<div class="inner_l">其他</div>
+			</div>
+			
+			<div class="inner_title " id="textarea" style="display: none;">
+				<textarea placeholder="请输入其他原因" oninput="changeInput(this)" style="border: 1px solid #c5c5c5;width: 100%;max-height: 120px;min-height: 100px;padding: 0.1rem;"></textarea>
+			</div>
+		</div>
+		
+		<div class="contentBox contentBoxset" style="background-color: transparent;margin: 30px 0;padding: 0;">
+			<div class="contentBox blank" style="background-color: #FA4A66;">
+				<a class="serviceBank_Btn" href="javascript:exit()">
+					<h2 style="margin: 0;">下一步</h2>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/layer_mobile/layer.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		let active = 0;
+		let value = '';
+		
+		function chooseCheck(obj, index){
+			$(obj).children("i").html(`&#xe654;`).css('color', '#FA4A66');
+			$(obj).siblings().children("i").html(`&#xe741;`).css('color', '#C5C5C5');
+			active = index;
+			if (index == 5) {
+				$("#textarea").show();
+			} else{
+				$("#textarea").hide();
+			}
+			
+			
+		}
+		
+		function exit(){
+			if (active == 0) {
+				layer.open({
+		        	type: 0,
+		        	content: '请选择注销原因',
+				    skin: 'msg',
+				    time: 2
+		        })
+			} else if (active == 5){
+				if (value == "") {
+					layer.open({
+			        	type: 0,
+			        	content: '请填写其他原因',
+					    skin: 'msg',
+					    time: 2
+			       })
+				} else {
+					window.location.href = 'logoff.html';
+					$("#textarea").children().val("");
+					value == ""
+				}
+				
+			} else {
+				window.location.href = 'logoff.html';
+				$("#textarea").children().val("");
+				value == ""
+			}
+		}
+		
+		function changeInput(e) {
+			value = $(e).val();
+		}
+	</script>
+</body>
+</html>

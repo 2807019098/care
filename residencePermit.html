@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="X-UA-Compatible" content="edge">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="wap-font-scale" content="no">
+	<script src="js/flexible.js"></script>
+	<title>智慧居家养老平台</title>
+	<link rel="apple-touch-icon" type="image/jpg" href="images/Logo.png">
+	<link rel="icon" type="image/jpg" href="images/Logo.png">
+	<link rel="stylesheet" href="css/base.css" />
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div class="container loginBox">
+		<header class="headerUser mixFixed zkFlex">
+			<div class="hederHomeBanner">
+				<a href="javascript:history.go(-1)" class="iconfont headIconPic">&#xe65f;</a>    			
+    			<h2>居住证上传</h2>
+    			<i class="tipsIcon"></i>
+    		</div>
+		</header>
+		<div class="shoplist loginBox" style="margin-top: 0.2rem;">
+			<ul class="loginBox">
+				<li class="list loginBox">
+					<form class="form" autocomplete="off" name="form" action="" method="get">
+						<div class="mainPerson">
+							<h2>请上传您的居住证</h2>
+							<div class="mainLabel">
+								<label>
+									<div style="margin-bottom: 20px;background: #AE202E;border-radius: 50%;color: #FFFFFF;display: flex;align-items: center;justify-content: center;width: 60px;height: 60px;">
+										<i class="iconfont">&#xe656;</i>
+									</div>
+									<input class="file" accept="image/*" onchange="changeimg(this)" type="file" />
+									<span>上传居住证</span>
+								</label>
+								<img class="fileImg" src="images/3.jpg" />
+							</div>
+							<button class="formli_btn" type="button" onclick="closeDialog2()">开始上传</button>
+						</div>
+					</form>
+    			</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.0.0.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-weui.min.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script>
+		
+		const changeimg = (obj) => {
+			var files = $(obj)[0].files;
+			var length = $(obj)[0].files.length;
+			$.each(files, function(key, value){
+                var reads = new FileReader();
+                reads.onload=function (e) {
+                	$(obj).parent().next().attr("src", this.result);
+                	console.log(this.result)
+		        };
+		        reads.readAsDataURL(value);
+			})
+		}
+		
+	</script>
+</body>
+</html>
